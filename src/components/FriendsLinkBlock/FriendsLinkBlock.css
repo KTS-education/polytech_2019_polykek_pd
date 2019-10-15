@@ -1,0 +1,13 @@
+.FriendsLinkBlock__box {
+    display: flex;
+    align-items: center;
+}
+
+.FriendsLinkBlock__avatars {
+    margin-left: 10px;
+    align-items: end;
+}
+
+.FriendsLinkBlock__avatar{
+    padding-left: -50px;
+}

@@ -1,0 +1,18 @@
+.Mainpending {
+    padding-left: 25%;
+    width: 800px;
+    height: 800px;
+}
+
+.title {
+    width: 186px;
+    height: 53px;
+    font-size: 40px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+
+}

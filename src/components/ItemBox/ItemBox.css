@@ -1,0 +1,5 @@
+.ItemBox__box {
+    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+}
