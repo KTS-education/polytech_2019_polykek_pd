@@ -16,9 +16,6 @@ class Button extends Component {
         );
     }
 
-    click() {
-        console.log("Click")
-    }
 }
 
 Button.propTypes = {

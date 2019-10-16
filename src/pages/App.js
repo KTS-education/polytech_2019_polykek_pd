@@ -11,10 +11,13 @@ import ProfileLinkBlock from "../components/ProfileLinkBlock/ProfileLinkBlock";
 import FriendsLinkBlock from "../components/FriendsLinkBlock";
 import Button from "../components/Button/Button";
 import ItemBox from "../components/ItemBox";
+import SearchBar from "../components/SearchBar/SearchBar";
+import Spinner from "../components/Spinner";
 
 class App extends React.Component {
     render() {
-        const avatars = [avatar, avatar, avatar]
+        const avatars = [avatar, avatar, avatar];
+
         return (
             <div className="Mainpending">
                 <Title>Wishlist &#128525;</Title>
@@ -34,6 +37,10 @@ class App extends React.Component {
                 <Button style="primary" width={200}>Добавить в избранное</Button>
                 <hr/>
                 <Button style="secondary" width={200}>Добавить в избранное</Button>
+                <hr/>
+                <Spinner />
+                <hr/>
+                <SearchBar/>
                 <hr/>
                 <ItemBox />
             </div>

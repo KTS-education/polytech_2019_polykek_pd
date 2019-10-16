@@ -1,0 +1,14 @@
+.MenuItem__text {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.MenuItem__box {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

@@ -16,7 +16,7 @@ class Item extends Component {
                     <span className="Item__cost">{item.cost}</span>
                 </div>
                 <div>
-                    <span className="Item__description">{item.description}</span>
+                    <p className="Item__description">{item.description}</p>
                 </div>
                 <div className="Item__button">
                     <Button width={200} style="primary">Добавить в избранное</Button>
