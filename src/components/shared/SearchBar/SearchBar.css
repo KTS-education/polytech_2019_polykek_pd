@@ -17,4 +17,5 @@
 }
 
 .SearchBar__box {
+    display: inline-block;
 }
