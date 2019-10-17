@@ -1,0 +1,50 @@
+.Item__box {
+    width: 200px;
+    padding: 25px;
+    align-items: center;
+}
+
+.Item__img {
+    width: 100%;
+}
+
+.Item__title {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.Item__cost {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.Item__cost::after {
+    content: " ₽";
+}
+
+.Item__description {
+    font-size: 10px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #b2b2b2;
+}
+
+.Item__button {
+    margin-top: 15px;
+}

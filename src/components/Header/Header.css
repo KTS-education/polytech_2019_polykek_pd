@@ -1,0 +1,9 @@
+.Header__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px;
+}
+.Header__link {
+    text-align: center;
+}

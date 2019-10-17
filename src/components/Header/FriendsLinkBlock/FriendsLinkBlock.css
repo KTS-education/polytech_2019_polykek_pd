@@ -1,0 +1,28 @@
+.FriendsLinkBlock__box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.FriendsLinkBlock__avatars {
+    display: flex;
+    list-style-type: none;
+    padding-inline-start: 15px;
+}
+
+.FriendsLinkBlock__avatar{
+    position: relative;
+}
+
+.FriendsLinkBlock__avatar:nth-child(1) {
+    z-index: 3;
+    margin-right: -25px;
+}
+.FriendsLinkBlock__avatar:nth-child(2) {
+    z-index: 2;
+    margin-right: -25px;
+}
+.FriendsLinkBlock__avatar:nth-child(3) {
+    z-index: 1;
+    margin-right: -25px;
+}

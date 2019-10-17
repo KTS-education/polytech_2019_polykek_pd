@@ -1,0 +1,15 @@
+@import "constants.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro&display=swap');
+
+body {
+    margin: 0;
+    font-family: -apple-system, "Fira Sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Cantarell", "Droid Sans", sans-serif, "Helvetica Neue", monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
