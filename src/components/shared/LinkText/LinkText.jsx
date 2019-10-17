@@ -10,7 +10,7 @@ class LinkText extends Component {
     render() {
         const { href, children } = this.props;
         return (
-            <a href={href} className="LinkText__text">{children}</a>
+            <a href={href} className={"LinkText__text"}>{children}</a>
         );
     }
 }

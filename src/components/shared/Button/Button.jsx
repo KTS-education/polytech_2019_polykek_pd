@@ -7,8 +7,10 @@ class Button extends Component {
     render() {
         const { width, onClick, children, style } = this.props;
 
+        const widthCalc = (width) ? width : children.length * 9;
+
         return (
-            <div onClick={onClick} style={{width: width}} className={style}>
+            <div onClick={onClick} style={{width: widthCalc}} className={style}>
                 <span className="Button__text">
                     {children}
                 </span>
@@ -17,6 +19,9 @@ class Button extends Component {
     }
 
 }
+Button.defaultProps = {
+    style: 'primary'
+};
 
 Button.propTypes = {
     width: PropTypes.number,

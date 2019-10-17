@@ -15,6 +15,7 @@ import SearchBar from "../components/shared/SearchBar/SearchBar";
 import Spinner from "../components/shared/Spinner";
 import Header from "../components/Header"
 import Main from "./Main";
+import Friends from "./Friends";
 class App extends React.Component {
     render() {
         const avatars = [avatar, avatar, avatar];
@@ -23,6 +24,8 @@ class App extends React.Component {
         return (
             <div className="Mainpending">
                 <Main />
+                <hr/>
+                <Friends />
                 <hr/>
                 <Header profile={profile} friends={avatars} />
                 <Title>Wishlist &#128525;</Title>
