@@ -4,14 +4,14 @@ import './Avatar.css';
 
 class Avatar extends React.Component {
     static propTypes = {
-        AvatarPath: PropTypes.string.isRequired
+        img: PropTypes.string.isRequired
     };
 
     render() {
-        const path = this.props.AvatarPath;
+        const { img } = this.props;
         return (
             <div className="Avatar__box">
-                <img className="Avatar__img" src={path} alt="avatar"/>
+                <img className="Avatar__img" src={img} alt="avatar"/>
             </div>
         );
     }

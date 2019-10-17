@@ -8,7 +8,6 @@ class Spinner extends Component {
             <div>
                 <img className={'Spinner__spinner'} src={img} alt={'Loading'}/>
             </div>
-
         );
     }
 }

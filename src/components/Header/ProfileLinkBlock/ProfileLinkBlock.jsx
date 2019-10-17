@@ -1,18 +1,20 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Avatar from "../Avatar";
-import LinkText from "../LinkText";
+import Avatar from "../../shared/Avatar";
+import LinkText from "../../shared/LinkText";
 import "./ProfileLinkBlock.css"
 
 class ProfileLinkBlock extends Component {
     render() {
+        const { img, name } = this.props;
+
         return (
             <div onClick={() => console.log("Click")} className="ProfileLinkBlock__box">
                 <div className="ProfileLinkBlock__avatar">
-                    <Avatar AvatarPath={this.props.path}/>
+                    <Avatar img={ img }/>
                 </div>
                 <div className="ProfileLinkBlock__text">
-                    <LinkText>{this.props.name}</LinkText>
+                    <LinkText>{ name }</LinkText>
                 </div>
             </div>
         );
@@ -20,7 +22,7 @@ class ProfileLinkBlock extends Component {
 }
 
 ProfileLinkBlock.propTypes = {
-    path: PropTypes.string,
+    img: PropTypes.string,
     name: PropTypes.string
 };
 
