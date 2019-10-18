@@ -48,3 +48,13 @@
 .Item__button {
     margin-top: 15px;
 }
+
+.Item__button-with-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Item__button-with-img .secondary, .Item__button-with-img .primary {
+    width: 80% !important;
+}

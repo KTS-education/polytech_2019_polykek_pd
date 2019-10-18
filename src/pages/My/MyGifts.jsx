@@ -33,7 +33,7 @@ class MyGifts extends React.Component {
                     </div>
 
                 </div>
-                <ItemBox items={WishListItems} />
+                <ItemBox items={WishListItems} secondary withImg/>
 
             </div>
 

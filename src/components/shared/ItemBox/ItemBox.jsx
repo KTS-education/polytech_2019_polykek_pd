@@ -6,14 +6,13 @@ import Item from "./Item";
 
 class ItemBox extends Component {
     render() {
-        const { items } = this.props;
-
+        const { items, secondary, withImg } = this.props;
         return (
             <div className="ItemBox__box">
                 <Masonry>
                     {items.map((item,index) => {
                         return (
-                            <Item key={index} item={item} />
+                            <Item secondary ={secondary} key={index} item={item} withImg={withImg} />
                         )
                     })}
                 </Masonry>
