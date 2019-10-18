@@ -1,0 +1,13 @@
+.FriendsList__box {
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+.FriendsList__list {
+    margin-left: 20% ;
+    margin-right: 20% ;
+    padding-bottom: 30px;
+}
+.FriendsList__button {
+    display: flex;
+    justify-content: center;
+}
