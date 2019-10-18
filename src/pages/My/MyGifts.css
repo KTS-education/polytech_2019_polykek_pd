@@ -1,0 +1,22 @@
+.myGifts__info {
+  display: flex;
+}
+.myGifts__info .info__link-row {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.myGifts__info .right {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.myGifts__info .right a {
+  text-decoration: none;
+  margin-right: 30px;
+}
+.myGifts__info .right a.active {
+  color: #329eff;
+}
+.myGifts__info .right a:not(.active) {
+  color: #000;
+}
