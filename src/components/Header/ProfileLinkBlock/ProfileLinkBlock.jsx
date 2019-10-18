@@ -6,15 +6,15 @@ import "./ProfileLinkBlock.css"
 
 class ProfileLinkBlock extends Component {
     render() {
-        const { img, name } = this.props;
+        const { profile } = this.props;
 
         return (
             <div onClick={() => console.log("Click")} className="ProfileLinkBlock__box">
                 <div className="ProfileLinkBlock__avatar">
-                    <Avatar img={ img }/>
+                    <Avatar img={ profile.img }/>
                 </div>
                 <div className="ProfileLinkBlock__text">
-                    <LinkText>{ name }</LinkText>
+                    <LinkText>{ profile.name }</LinkText>
                 </div>
             </div>
         );
@@ -22,8 +22,7 @@ class ProfileLinkBlock extends Component {
 }
 
 ProfileLinkBlock.propTypes = {
-    img: PropTypes.string,
-    name: PropTypes.string
+    profile: PropTypes.object,
 };
 
 export default ProfileLinkBlock;

@@ -8,15 +8,15 @@ import Avatar from "../../shared/Avatar";
 class FriendsLinkBlock extends Component {
     render() {
         const {friends} = this.props;
-        console.log('qwer', friends);
+
         return (
             <div className="FriendsLinkBlock__box">
                 <LinkText>Мои друзья</LinkText>
                 <ul className="FriendsLinkBlock__avatars">
-                    {friends.slice(0,3).map(i => {
+                    {friends.slice(0,3).map((i, index) => {
                         return (
-                            <li className="FriendsLinkBlock__avatar">
-                                <Avatar img={i}/>
+                            <li key={index} className="FriendsLinkBlock__avatar">
+                                <Avatar img={i.img}/>
                             </li>
                         )
                     })}

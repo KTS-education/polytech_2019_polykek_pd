@@ -3,35 +3,42 @@ import "./Main.css"
 import Header from "../../components/Header/Header";
 import Title from "../../components/shared/Title";
 import SearchBar from "../../components/shared/SearchBar/SearchBar";
-
-
-import avatar from "../../img/avatar.jpg";
 import SubTitle from "../../components/shared/SubTitle";
 import ItemBox from "../../components/shared/ItemBox";
+/* Тестовые данные */
+import profile from "../../data/profile";
+import friends from "../../data/friends";
+import WishListItems from "../../data/WishListItems";
 
 class Main extends Component {
     render() {
-        /* Тестовые данные */
-        const avatars = [avatar, avatar, avatar];
-        const profile = {name: 'Egor Fadeev', avatar: avatar};
-
         return (
             <div>
-                <Header profile={profile} friends={avatars}/>
+                <Header profile={profile} friends={friends}/>
                 <div>
                     <div className={'Main__TopBox'}>
                         <div className={'Main__Title'}>
-                            <Title>Wishlist&#128525;</Title>
+                            <Title>Wishlist
+                                <span role="img"
+                                      aria-label="Smiling Face With Heart-Shaped Eyes">
+                                &#128525;</span>
+                            </Title>
                         </div>
                         <div className={'Main__SearchBar'}>
                             <SearchBar/>
                         </div>
                         <div className={'Main__content'}>
                             <div className={'Main__content-subtitle'}>
-                                <SubTitle>Популярное&#129321;</SubTitle>
+                                <SubTitle>Популярное
+                                    <span role="img"
+                                          aria-label="Grinning Face with Star Eyes">
+                                        &#129321;
+                                    </span>
+                                </SubTitle>
+
                             </div>
                             <div>
-                                <ItemBox />
+                                <ItemBox items={WishListItems}/>
                             </div>
                         </div>
                     </div>

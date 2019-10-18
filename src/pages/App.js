@@ -1,8 +1,5 @@
 import React from 'react';
 import './App.css';
-
-import avatar from '../img/avatar.jpg';
-
 import Avatar from '../components/shared/Avatar'
 import LinkText from "../components/shared/LinkText";
 import Title from "../components/shared/Title";
@@ -10,27 +7,27 @@ import SubTitle from "../components/shared/SubTitle";
 import ProfileLinkBlock from "../components/Header/ProfileLinkBlock/ProfileLinkBlock";
 import FriendsLinkBlock from "../components/Header/FriendsLinkBlock";
 import Button from "../components/shared/Button/Button";
-import ItemBox from "../components/shared/ItemBox";
 import SearchBar from "../components/shared/SearchBar/SearchBar";
 import Spinner from "../components/shared/Spinner";
 import Header from "../components/Header"
 import Main from "./Main";
 import Friends from "./Friends";
+
+import profile from "../data/profile";
+import friends from "../data/friends";
+
 class App extends React.Component {
     render() {
-        const avatars = [avatar, avatar, avatar];
-        const profile = { name: 'Egor Fadeev', avatar: avatar};
-
         return (
             <div className="Mainpending">
                 <Main />
                 <hr/>
                 <Friends />
                 <hr/>
-                <Header profile={profile} friends={avatars} />
+                <Header profile={profile} friends={friends} />
                 <Title>Wishlist &#128525;</Title>
                 <hr/>
-                <Avatar img={avatar}/>
+                <Avatar img={profile.img}/>
                 <hr/>
                 <LinkText>LinkText</LinkText>
                 <hr/>
@@ -38,9 +35,9 @@ class App extends React.Component {
                 <hr/>
                 <SubTitle>SubTitle</SubTitle>
                 <hr/>
-                <ProfileLinkBlock name={profile.name} img={profile.avatar}/>
+                <ProfileLinkBlock profile={profile}/>
                 <hr/>
-                <FriendsLinkBlock friends={avatars}/>
+                <FriendsLinkBlock friends={friends}/>
                 <hr/>
                 <Button style="primary" width={200}>Добавить в избранное</Button>
                 <hr/>
@@ -49,8 +46,6 @@ class App extends React.Component {
                 <Spinner />
                 <hr/>
                 <SearchBar/>
-                <hr/>
-                <ItemBox />
             </div>
         );
     }

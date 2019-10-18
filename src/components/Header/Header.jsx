@@ -13,7 +13,7 @@ class Index extends Component {
             <div>
                 <div className={'Header__box'}>
                     <div className={'Header__Profile'}>
-                        <ProfileLinkBlock name={profile.name} img={profile.avatar}/>
+                        <ProfileLinkBlock profile={profile}/>
                     </div>
                     {(link) ?
                         (<div className={'Header__link'}>
@@ -32,7 +32,7 @@ class Index extends Component {
 }
 
 Index.propTypes = {
-    profile: PropTypes.array,
+    profile: PropTypes.object,
     friends: PropTypes.array,
     link: PropTypes.string,
 };

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import "./SubTitle.css"
 
 class SubTitle extends Component {
@@ -11,7 +10,5 @@ class SubTitle extends Component {
         );
     }
 }
-
-SubTitle.propTypes = {};
 
 export default SubTitle;

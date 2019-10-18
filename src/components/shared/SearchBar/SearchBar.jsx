@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import "./SearchBar.css"
 import Menu from "./Menu";
 
@@ -40,7 +39,5 @@ class SearchBar extends Component {
         );
     }
 }
-
-SearchBar.propTypes = {};
 
 export default SearchBar;

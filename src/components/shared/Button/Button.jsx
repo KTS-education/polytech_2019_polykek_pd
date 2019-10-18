@@ -25,7 +25,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
     width: PropTypes.number,
-    style: PropTypes.string,
+    type: PropTypes.string,
     onClick: PropTypes.func,
 };
 

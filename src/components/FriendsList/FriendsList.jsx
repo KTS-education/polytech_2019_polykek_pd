@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import "./FriendsList.css"
-
-import img from "../../img/avatar.jpg"
+import PropTypes from 'prop-types';
 import FriendItem from "./FriendItem";
 import Button from "../shared/Button/Button";
 import Spinner from "../shared/Spinner";
@@ -19,18 +18,13 @@ class FriendsList extends Component {
     };
 
     render() {
-        const profile = {
-            name: "Qwert Werty",
-            img: img
-        };
-
-        const profiles = [{...profile}, {...profile}, {...profile}, {...profile}];
+        const {friends} = this.props;
 
         return (
             <div className={'FriendsList__box'}>
-                {profiles.map(i => {
+                {friends.map((i, index) => {
                     return (
-                        <div className={'FriendsList__list'}>
+                        <div key={index} className={'FriendsList__list'}>
                             <FriendItem profile={i}/>
                         </div>
                     )
@@ -38,13 +32,17 @@ class FriendsList extends Component {
                 <div className={'FriendsList__button'}>
                     {(this.state.loading) ?
                         (<Spinner/>) :
-                        (<Button onClick={this.loadMore} width={130} style={'secondary'}>Показать ещё</Button>)}
+                        (<Button onClick={this.loadMore}
+                                 width={130}
+                                 style={'secondary'}>Показать ещё</Button>)}
                 </div>
             </div>
         );
     }
 }
 
-FriendsList.propTypes = {};
+FriendsList.propTypes = {
+    friends: PropTypes.array,
+};
 
 export default FriendsList;

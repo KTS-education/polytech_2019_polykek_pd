@@ -5,21 +5,21 @@ import Button from "../../Button/Button";
 
 class Item extends Component {
     render() {
-        const {item} = this.props;
+        const { title, img, cost, description } = this.props.item;
         return (
             <div className="Item__box">
-                <img className="Item__img" src={item.img} alt={item.title}/>
+                <img className="Item__img" src={img} alt={title}/>
                 <div className="Item__title">
-                    <span>{item.title}</span>
+                    <span>{title}</span>
                 </div>
                 <div>
-                    <span className="Item__cost">{item.cost}</span>
+                    <span className="Item__cost">{cost}</span>
                 </div>
                 <div>
-                    <p className="Item__description">{item.description}</p>
+                    <p className="Item__description">{description}</p>
                 </div>
                 <div className="Item__button">
-                    <Button width={200} style="primary">Добавить в избранное</Button>
+                    <Button width={200}>Добавить в избранное</Button>
                 </div>
             </div>
         );
