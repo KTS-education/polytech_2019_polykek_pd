@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import "./FriendItem.css"
-import Avatar from "../../shared/Avatar";
-import Button from "../../shared/Button/Button";
+import Avatar from "components/shared/Avatar";
+import Button from "components/shared/Button/Button";
 
 class FriendItem extends Component {
     render() {

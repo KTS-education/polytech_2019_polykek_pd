@@ -23,7 +23,7 @@ class MyGifts extends React.Component {
                     <Avatar img={profile.img} size={150}/>
 
                     <div className="right">
-                        <Title children="Ким хуим"/>
+                        <Title children="Qwerty Yrtertw"/>
                         <div className="info__link-row">
                             <a href="123" className="active">Хочу получить</a>
                             <a href="123" className="">Хочу подарить</a>

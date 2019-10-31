@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import "./Friends.css"
-import Header from "../../components/Header/Header";
-import Title from "../../components/shared/Title";
-import SearchBar from "../../components/shared/SearchBar/SearchBar";
-import FriendsList from "../../components/FriendsList";
+import Header from "components/Header/Header";
+import Title from "components/shared/Title";
+import SearchBar from "components/shared/SearchBar/SearchBar";
+import FriendsList from "components/FriendsList";
 
-import profile from "../../data/profile";
-import friends from "../../data/friends";
+import profile from "data/profile";
+import friends from "data/friends";
 
 class Friends extends Component {
     render() {
