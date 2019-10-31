@@ -1,0 +1,14 @@
+@import "styles/constants";
+
+.SubTitle{
+    &__text {
+        font-family: "Source Sans Pro", monospace;
+        font-size: 30px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $black;
+    }
+}

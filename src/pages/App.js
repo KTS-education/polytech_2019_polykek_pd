@@ -40,9 +40,10 @@ class App extends React.Component {
                 <hr/>
                 <FriendsLinkBlock friends={friends}/>
                 <hr/>
-                <Button style="primary" width={200}>Добавить в избранное</Button>
+                <Button primary>Добавить в избранное</Button>
                 <hr/>
-                <Button style="secondary" width={200}>Добавить в избранное</Button>
+                <Button secondary>Добавить в избранное</Button>
+                <Button secondary>Добавить в избранноеqweqweqweqweqweqwe</Button>
                 <hr/>
                 <Spinner />
                 <hr/>

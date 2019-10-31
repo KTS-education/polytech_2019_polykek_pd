@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import "./SubTitle.css"
+import "./SubTitle.scss"
 
 class SubTitle extends Component {
     render() {
         return (
-            <div>
-                <span className="SubTitle__text">{this.props.children}</span>
-            </div>
+            <span className="SubTitle__text">{this.props.children}</span>
         );
     }
 }

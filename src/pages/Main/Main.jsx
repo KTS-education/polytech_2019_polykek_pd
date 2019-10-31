@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import Header from "components/Header/Header";
+import Title from "components/shared/Title";
+import SearchBar from "components/shared/SearchBar/SearchBar";
+import SubTitle from "components/shared/SubTitle";
+import ItemBox from "components/shared/ItemBox";
+
 import "./Main.css"
-import Header from "../../components/Header/Header";
-import Title from "../../components/shared/Title";
-import SearchBar from "../../components/shared/SearchBar/SearchBar";
-import SubTitle from "../../components/shared/SubTitle";
-import ItemBox from "../../components/shared/ItemBox";
+
 /* Тестовые данные */
 import profile from "../../data/profile";
 import friends from "../../data/friends";

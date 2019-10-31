@@ -1,21 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import './Avatar.css';
+import './Avatar.scss';
 
 class Avatar extends React.Component {
     static propTypes = {
-        img: PropTypes.string.isRequired
+        img: PropTypes.string.isRequired,
+        sm: PropTypes.bool,
+        md: PropTypes.bool,
+        lg: PropTypes.bool,
     };
 
     static defaultProps = {
-        size: 50,
+        sm: true
     };
 
     render() {
-        const { img, size } = this.props;
+        const {img, sm, md, lg} = this.props;
+        const boxClass = `Avatar__box${(sm) ? ' Avatar__box_sm' : ''}${(md) ? ' Avatar__box_md' : ''}${(lg) ? ' Avatar__box_lg' : ''}`;
+        const imgClass = `Avatar__img${(sm) ? ' Avatar__img_sm' : ''}${(md) ? ' Avatar__img_md' : ''}${(lg) ? ' Avatar__img_lg' : ''}`;
         return (
-            <div style={{width: `${size}px`, height: `${size}px`}} className="Avatar__box">
-                <img style={{width: `${size}px`}} className="Avatar__img" src={img} alt="avatar"/>
+            <div className={boxClass}>
+                <img className={imgClass} src={img} alt="avatar"/>
             </div>
         );
     }

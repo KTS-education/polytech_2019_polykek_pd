@@ -14,9 +14,3 @@
   text-decoration: none;
   margin-right: 30px;
 }
-.myGifts__info .right a.active {
-  color: #329eff;
-}
-.myGifts__info .right a:not(.active) {
-  color: #000;
-}

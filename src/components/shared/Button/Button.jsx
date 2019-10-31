@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import "./Button.css"
+import "./Button.scss"
 
 class Button extends Component {
 
     render() {
-        const { width, onClick, children, style } = this.props;
-
-        const widthCalc = (width) ? width : children.length * 9;
+        const {onClick, children, primary, secondary, fill} = this.props;
+        const classButton = `${(primary) ? 'btn__primary' : ''}${(secondary) ? ' btn__secondary' : ''}${(fill) ? ' btn__fill':''}`;
 
         return (
-            <div onClick={onClick} style={{width: widthCalc}} className={style}>
-                <span className="Button__text">
+            <div onClick={onClick} className={classButton}>
+                <span className="btn__text">
                     {children}
                 </span>
             </div>
@@ -19,13 +18,17 @@ class Button extends Component {
     }
 
 }
+
 Button.defaultProps = {
-    style: 'primary'
+    primary: true,
 };
 
 Button.propTypes = {
+    children: PropTypes.string,
     width: PropTypes.number,
-    type: PropTypes.string,
+    primary: PropTypes.bool,
+    secondary: PropTypes.bool,
+    fill: PropTypes.bool,
     onClick: PropTypes.func,
 };
 

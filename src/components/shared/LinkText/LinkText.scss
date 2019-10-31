@@ -1,0 +1,32 @@
+@import "styles/constants";
+
+%text {
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-decoration: none;
+}
+
+.LinkText {
+  &__text {
+    @extend %text;
+    cursor: pointer;
+    color: $link-text-blue;
+
+    &:active {
+      color: $link-text-active;
+    }
+
+    &:hover {
+      color: $link-text-hover;
+    }
+  }
+
+  &__stay {
+    @extend %text;
+    color: $link-text-stay;
+  }
+}

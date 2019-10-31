@@ -1,0 +1,64 @@
+@import "styles/constants";
+
+%text {
+  text-align: start;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.Item {
+  &__box {
+    display: block;
+    width: 200px;
+    padding: 25px;
+    align-items: center;
+    text-align: start;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    @extend %text;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: $black;
+  }
+
+  &__cost {
+    @extend %text;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: $black;
+
+    &::after {
+      content: " ₽";
+    }
+  }
+
+  &__description {
+    @extend %text;
+    font-size: 10px;
+    color: #b2b2b2;
+  }
+
+  &__button {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  &__button-with-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button-with-img .secondary, &__button-with-img .primary {
+    width: 80% !important;
+  }
+}

@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import "./Title.css"
+import "./Title.scss"
 
 class Title extends Component {
     render() {
         const {children} = this.props;
 
         return (
-            <div>
-                <span className="Title__text">{children}</span>
-            </div>
+            <span className="Title__text">{children}</span>
         );
     }
 }

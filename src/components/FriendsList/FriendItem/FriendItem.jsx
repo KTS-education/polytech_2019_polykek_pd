@@ -11,7 +11,7 @@ class FriendItem extends Component {
             <div>
                 <div className={'FriendItem__box'}>
                     <div className="FriendItem__avatar">
-                        <Avatar img={profile.img} size={100}/>
+                        <Avatar img={profile.img} md/>
                     </div>
                     <div className="FriendItem__info">
                         <div className={'FriendItem__name-box'}>

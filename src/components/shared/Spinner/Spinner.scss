@@ -1,0 +1,13 @@
+@keyframes spinningColor {
+    0% {
+        transform: rotate(-360deg);
+    }
+}
+
+.Spinner{
+    &__spinner {
+        animation: spinningColor 1.5s linear infinite;
+        width: 25px;
+        height: 25px;
+    }
+}
