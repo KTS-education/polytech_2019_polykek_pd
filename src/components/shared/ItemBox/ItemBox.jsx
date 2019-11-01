@@ -10,9 +10,9 @@ class ItemBox extends Component {
         return (
             <div className="ItemBox__box">
                 <Masonry>
-                    {items.map((item, index) => {
+                    {items.map(item => {
                         return (
-                            <Item secondary={secondary} key={index} item={item} withImg={withImg}/>
+                            <Item secondary={secondary} key={item.id} item={item} withImg={withImg}/>
                         )
                     })}
                 </Masonry>

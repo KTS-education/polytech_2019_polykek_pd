@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ProfileLinkBlock from "./ProfileLinkBlock";
 import FriendsLinkBlock from "./FriendsLinkBlock";
+import LinkText from "components/shared/LinkText";
 import "./Header.css"
-import LinkText from "../shared/LinkText";
 
 class Index extends Component {
     render() {

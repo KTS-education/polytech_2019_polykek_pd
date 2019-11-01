@@ -3,10 +3,10 @@
 %btn_style {
   display: inline-flex;
   cursor: pointer;
-  height: 40px;
+  min-height: 40px;
   border-radius: 21px;
-  padding-left: 21px;
-  padding-right: 21px;
+  padding-left: 15px;
+  padding-right: 15px;
   justify-content: center;
   text-align: center;
   transition: all .3s;
@@ -22,37 +22,38 @@
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
-    line-height: 40px;
     letter-spacing: normal;
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   &__primary {
     @extend %btn_style;
-    background-image: linear-gradient(79deg, #7dc4ff, #6700ff);
-    color: $white;
+    background-image: $btn-primary-gradient;
+    color: $global-white;
 
     &:hover {
-      background-image: linear-gradient(259deg, #7dc4ff, #7dc4ff);
+      background-image: $btn-primary-hover-gradient;
     }
 
     &:active {
-      background-image: linear-gradient(259deg, #6700ff, #6700ff);
+      background-image: $btn-primary-active-gradient;
     }
 
   }
 
   &__secondary {
     @extend %btn_style;
-    background-image: linear-gradient(79deg, #e0fffd, #e7e1ff);
-    color: $black;
+    background-image: $btn-secondary-gradient;
+    color: $global-black;
 
     &:hover {
-      background-image: linear-gradient(0, #e0fffd, #e0fffd);
+      background-image: $btn-secondary-hover-gradient;
     }
 
     &:active {
-      background-image: linear-gradient(0, #e7e1ff, #e7e1ff);
+      background-image: $btn-secondary-active-gradient;
     }
   }
 }
