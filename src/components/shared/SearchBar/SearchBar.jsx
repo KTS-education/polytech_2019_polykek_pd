@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import _ from 'lodash'
 import "./SearchBar.css"
 import Menu from "./Menu";
-import api from "~api";
+import api from "api";
 
 class SearchBar extends Component {
 
