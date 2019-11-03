@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Avatar from '../components/shared/Avatar'
 import LinkText from "../components/shared/LinkText";
 import Title from "../components/shared/Title";
@@ -15,16 +14,19 @@ import Friends from "./Friends";
 import MyGifts from "./My"
 import profile from "../data/profile";
 import friends from "../data/friends";
+import './App.css';
 
 class App extends React.Component {
+
+
     render() {
         return (
             <div className="Mainpending">
-                <Main />
+                <Main/>
                 <hr/>
-                <Friends />
+                <Friends/>
                 <hr/>
-                <Header profile={profile} friends={friends} />
+                <Header profile={profile} friends={friends}/>
                 <hr/>
                 <Title>Wishlist &#128525;</Title>
                 <hr/>
@@ -45,11 +47,11 @@ class App extends React.Component {
                 <Button secondary>Добавить в избранное</Button>
                 <Button secondary>Добавить в избранноеqweqweqweqweqweqwe</Button>
                 <hr/>
-                <Spinner />
+                <Spinner/>
                 <hr/>
                 <SearchBar/>
                 <hr/>
-                <MyGifts />
+                <MyGifts/>
             </div>
         );
     }

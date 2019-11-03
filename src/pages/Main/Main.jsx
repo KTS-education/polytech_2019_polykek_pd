@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import api from "api";
 import Header from "components/Header/Header";
 import Title from "components/shared/Title";
 import SearchBar from "components/shared/SearchBar/SearchBar";
@@ -6,13 +7,31 @@ import SubTitle from "components/shared/SubTitle";
 import ItemBox from "components/shared/ItemBox";
 
 import "./Main.css"
-
 /* Тестовые данные */
 import profile from "../../data/profile";
 import friends from "../../data/friends";
 import WishListItems from "../../data/WishListItems";
 
+
 class Main extends Component {
+    state = {
+        isAuthorizing: false,
+        userID: null,
+    };
+
+    componentDidMount() {
+        api(`/api/user/auth${window.location.search}`, 'POST')
+            .then(result => {
+                if (result.response) {
+                    this.setState({userID: result.response['user_id']});
+                } else {
+                    console.error(result.error)
+                }
+            });
+    };
+
+
+
     render() {
         return (
             <div>

@@ -5,25 +5,24 @@ import MenuItem from "./MenuItem";
 
 class Menu extends Component {
     render() {
-        const {show} = this.props;
-
-        const data = ['item1', 'item2', 'item3'];
+        const {show, data} = this.props;
 
         return (
             <div>
-                {(show) ?
-                    <div className={'Menu__box'}>
-                        {data.map((i, index) => {
-                            return <MenuItem key={index}>{i}</MenuItem>
-                        })}
-                    </div> : ''}
+                {show && data &&
+                <div className={'Menu__box'}>
+                    {data.map((item, index) => {
+                        return <MenuItem key={index}>{item.value}</MenuItem>
+                    })}
+                </div>}
             </div>
         );
     }
 }
 
 Menu.propTypes = {
-    show: PropTypes.bool.isRequired
+    show: PropTypes.bool.isRequired,
+    data: PropTypes.array
 };
 
 
