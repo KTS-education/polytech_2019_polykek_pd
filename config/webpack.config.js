@@ -307,6 +307,7 @@ module.exports = function(webpackEnv) {
         // Allows for better profiling with ReactDevTools
         styles$: path.resolve(__dirname, './src/styles'),
         'components$': path.resolve(__dirname, './src/components'),
+        'data$': path.resolve(__dirname, './src/data'),
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling',

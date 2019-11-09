@@ -1,0 +1,55 @@
+{
+
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:promise/recommended"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "sonarjs",
+    "promise",
+    "lodash"
+  ],
+  "rules": {
+    "react/prefer-es6-class": [
+      "error",
+      "always"
+    ],
+    "import/no-unresolved": "off",
+    "react/state-in-constructor": "off",
+    "react/prefer-stateless-function": ["off"],
+    "react/no-unused-state": "off",
+    "react/static-property-placement": [
+      "error",
+      "static public field"
+    ],
+    "react/jsx-filename-extension": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "no-console": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "packageDir": "./"
+      }
+    ],
+    "sonarjs/cognitive-complexity": [
+      "error",
+      30
+    ]
+  }
+}

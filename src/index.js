@@ -1,11 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'api';
-import './styles/main.scss';
-import App from './pages/App';
+
+import { renderRoutes } from 'react-router-config';
+import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './pages/App';
+import MyGifts from './pages/My';
+import Friends from './pages/Friends';
+import Main from './pages/Main';
+
+import './styles/main.scss';
+
+const routes = [
+  {
+    component: App,
+    routes: [
+      {
+        path: '/giftss',
+        component: MyGifts,
+      },
+      {
+        path: '/friends',
+        component: Friends,
+      },
+      {
+        path: '/',
+        extract: true,
+        component: Main,
+      },
+    ],
+  },
+];
+ReactDOM.render(
+  <BrowserRouter>
+    { renderRoutes(routes) }
+  </BrowserRouter>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

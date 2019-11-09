@@ -15,46 +15,69 @@ import MyGifts from "./My"
 import profile from "../data/profile";
 import friends from "../data/friends";
 import './App.css';
+import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
+import {renderRoutes} from 'react-router-config'
 
-class App extends React.Component {
 
+export class App extends React.Component {
 
     render() {
+
+
         return (
-            <div className="Mainpending">
-                <Main/>
+            <div>
+                <ul>
+                    <li>
+                        <Link to="/qwe">Main</Link>
+                    </li>
+                    <li>
+                        <Link to="/friends">Gifs</Link>
+                    </li>
+                    <li>
+                        <Link to="/gifts">Friends</Link>
+                    </li>
+                </ul>
                 <hr/>
-                <Friends/>
-                <hr/>
-                <Header profile={profile} friends={friends}/>
-                <hr/>
-                <Title>Wishlist &#128525;</Title>
-                <hr/>
-                <Avatar img={profile.img}/>
-                <hr/>
-                <LinkText>LinkText</LinkText>
-                <hr/>
-                <Title>Title</Title>
-                <hr/>
-                <SubTitle>SubTitle</SubTitle>
-                <hr/>
-                <ProfileLinkBlock profile={profile}/>
-                <hr/>
-                <FriendsLinkBlock friends={friends}/>
-                <hr/>
-                <Button primary>Добавить в избранное</Button>
-                <hr/>
-                <Button secondary>Добавить в избранное</Button>
-                <Button secondary>Добавить в избранноеqweqweqweqweqweqwe</Button>
-                <hr/>
-                <Spinner/>
-                <hr/>
-                <SearchBar/>
-                <hr/>
-                <MyGifts/>
+                {renderRoutes(this.props.route.routes)}
             </div>
+
         );
     }
 }
 
 export default App;
+
+/*
+<div className="Mainpending">
+                    <Main/>
+                    <hr/>
+                    <Friends/>
+                    <hr/>
+                    <Header profile={profile} friends={friends}/>
+                    <hr/>
+                    <Title>Wishlist &#128525;</Title>
+                    <hr/>
+                    <Avatar img={profile.img}/>
+                    <hr/>
+                    <LinkText>LinkText</LinkText>
+                    <hr/>
+                    <Title>Title</Title>
+                    <hr/>
+                    <SubTitle>SubTitle</SubTitle>
+                    <hr/>
+                    <ProfileLinkBlock profile={profile}/>
+                    <hr/>
+                    <FriendsLinkBlock friends={friends}/>
+                    <hr/>
+                    <Button primary>Добавить в избранное</Button>
+                    <hr/>
+                    <Button secondary>Добавить в избранное</Button>
+                    <Button secondary>Добавить в избранноеqweqweqweqweqweqwe</Button>
+                    <hr/>
+                    <Spinner/>
+                    <hr/>
+                    <SearchBar/>
+                    <hr/>
+                    <MyGifts/>
+                </div>
+ */
