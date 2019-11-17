@@ -1,14 +1,20 @@
-import React, {Component} from 'react';
-import "./Title.scss"
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import './Title.scss';
 
 class Title extends Component {
-    render() {
-        const {children} = this.props;
+  static propTypes = {
+    children: PropTypes.string.isRequired,
+  };
 
-        return (
-            <span className="Title__text">{children}</span>
-        );
-    }
+  render() {
+    const { children } = this.props;
+
+    return (
+      <span className="Title__text">{children}</span>
+    );
+  }
 }
 
 export default Title;

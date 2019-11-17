@@ -1,3 +1,3 @@
-import Index from "./Header";
+import Index from './Header';
 
 export default Index;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Header from 'components/Header/Header';
 import Title from 'components/shared/Title';
 import SearchBar from 'components/shared/SearchBar/SearchBar';

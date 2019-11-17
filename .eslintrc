@@ -1,5 +1,4 @@
 {
-
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -32,7 +31,9 @@
     ],
     "import/no-unresolved": "off",
     "react/state-in-constructor": "off",
-    "react/prefer-stateless-function": ["off"],
+    "react/prefer-stateless-function": [
+      "off"
+    ],
     "react/no-unused-state": "off",
     "react/static-property-placement": [
       "error",
@@ -47,6 +48,8 @@
         "packageDir": "./"
       }
     ],
+    "promise/no-return-wrap":  ["warn"],
+    "react/jsx-curly-spacing": ["error", {"when": "never", "allowMultiline": false}],
     "sonarjs/cognitive-complexity": [
       "error",
       30

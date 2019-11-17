@@ -1,16 +1,21 @@
-import React, {Component} from 'react';
-import "./MenuItem.css"
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './MenuItem.css';
 
 class MenuItem extends Component {
-    render() {
-        const { children } = this.props;
+  static propTypes = {
+    children: PropTypes.string.isRequired,
+  };
 
-        return (
-            <div className={'MenuItem__box'}>
-                <span className={'MenuItem__text'}>{children}</span>
-            </div>
-        );
-    }
+  render() {
+    const { children } = this.props;
+
+    return (
+      <div className="MenuItem__box">
+        <span className="MenuItem__text">{children}</span>
+      </div>
+    );
+  }
 }
 
 export default MenuItem;
