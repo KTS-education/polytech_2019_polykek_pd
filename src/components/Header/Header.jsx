@@ -1,40 +1,47 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ProfileLinkBlock from "./ProfileLinkBlock";
-import FriendsLinkBlock from "./FriendsLinkBlock";
-import "./Header.css"
-import LinkText from "../shared/LinkText";
+import LinkText from 'components/shared/LinkText';
+import ProfileLinkBlock from './ProfileLinkBlock';
+import FriendsLinkBlock from './FriendsLinkBlock';
+import './Header.css';
 
 class Index extends Component {
-    render() {
-        const {profile, friends, link} = this.props;
-
-        return (
-            <div>
-                <div className={'Header__box'}>
-                    <div className={'Header__Profile'}>
-                        <ProfileLinkBlock profile={profile}/>
-                    </div>
-                    {(link) ?
-                        (<div className={'Header__link'}>
-                            <LinkText >{link}</LinkText>
-                        </div>)
-                        :
-                        (<div className={'Header__friends'}>
-                            <FriendsLinkBlock friends={friends}/>
-                        </div>)
-                    }
-
-                </div>
-            </div>
-        );
-    }
-}
-
-Index.propTypes = {
-    profile: PropTypes.object,
-    friends: PropTypes.array,
+  static propTypes = {
+    profile: PropTypes.objectOf(PropTypes.string).isRequired,
+    friends: PropTypes.arrayOf(PropTypes.string),
     link: PropTypes.string,
-};
+  };
+
+  static defaultProps = {
+    friends: [],
+    link: '',
+  };
+
+  render() {
+    const { profile, friends, link } = this.props;
+
+    return (
+      <div>
+        <div className="Header__box">
+          <div className="Header__Profile">
+            <ProfileLinkBlock profile={profile} />
+          </div>
+          {(link)
+            ? (
+              <div className="Header__link">
+                <LinkText>{link}</LinkText>
+              </div>
+            )
+            : (
+              <div className="Header__friends">
+                <FriendsLinkBlock friends={friends} />
+              </div>
+            )}
+
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Index;

@@ -1,3 +1,3 @@
-import LinkText from "./LinkText";
+import LinkText from './LinkText';
 
 export default LinkText;

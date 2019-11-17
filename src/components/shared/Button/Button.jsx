@@ -1,35 +1,43 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import "./Button.scss"
+import classNames from 'classnames';
+import './Button.scss';
 
 class Button extends Component {
-
-    render() {
-        const {onClick, children, primary, secondary, fill} = this.props;
-        const classButton = `${(primary) ? 'btn__primary' : ''}${(secondary) ? ' btn__secondary' : ''}${(fill) ? ' btn__fill':''}`;
-
-        return (
-            <div onClick={onClick} className={classButton}>
-                <span className="btn__text">
-                    {children}
-                </span>
-            </div>
-        );
-    }
-
-}
-
-Button.defaultProps = {
-    primary: true,
-};
-
-Button.propTypes = {
+  static propTypes = {
     children: PropTypes.string,
-    width: PropTypes.number,
     primary: PropTypes.bool,
     secondary: PropTypes.bool,
     fill: PropTypes.bool,
     onClick: PropTypes.func,
-};
+  };
+
+  static defaultProps = {
+    children: '',
+    primary: true,
+    secondary: false,
+    fill: false,
+    onClick: () => null,
+  };
+
+  render() {
+    const {
+      onClick, children, primary, secondary, fill,
+    } = this.props;
+    const btn = classNames({
+      btn__primary: primary,
+      btn__secondary: secondary,
+      btn__fill: fill,
+    });
+
+    return (
+      <div className={btn} onClick={onClick} role="button" tabIndex={0}>
+        <span className="btn__text">
+          {children}
+        </span>
+      </div>
+    );
+  }
+}
 
 export default Button;

@@ -1,7 +1,17 @@
 // Основные цвета
 
-$white: #ffffff;
-$black: #000000;
+$global-white: #ffffff;
+$global-black: #000000;
+
+// Кнопки
+
+$btn-primary-gradient: linear-gradient(79deg, #7dc4ff, #6700ff);
+$btn-primary-hover-gradient: linear-gradient(259deg, #7dc4ff, #7dc4ff);
+$btn-primary-active-gradient: linear-gradient(259deg, #6700ff, #6700ff);
+
+$btn-secondary-gradient: linear-gradient(79deg, #e0fffd, #e7e1ff);
+$btn-secondary-hover-gradient: linear-gradient(0, #e0fffd, #e0fffd);
+$btn-secondary-active-gradient: linear-gradient(0, #e7e1ff, #e7e1ff);
 
 // Ссылки
 

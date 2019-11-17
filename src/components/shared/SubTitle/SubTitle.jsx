@@ -1,12 +1,19 @@
-import React, {Component} from 'react';
-import "./SubTitle.scss"
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import './SubTitle.scss';
 
 class SubTitle extends Component {
-    render() {
-        return (
-            <span className="SubTitle__text">{this.props.children}</span>
-        );
-    }
+  static propTypes = {
+    children: PropTypes.string.isRequired,
+  };
+
+  render() {
+    const { children } = this.props;
+    return (
+      <span className="SubTitle__text">{children}</span>
+    );
+  }
 }
 
 export default SubTitle;

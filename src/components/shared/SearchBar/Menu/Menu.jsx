@@ -1,30 +1,28 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import "./Menu.css"
-import MenuItem from "./MenuItem";
+import './Menu.css';
+import MenuItem from './MenuItem';
 
 class Menu extends Component {
-    render() {
-        const {show} = this.props;
+  static propTypes = {
+    show: PropTypes.bool.isRequired,
+    data: PropTypes.arrayOf(PropTypes.string, PropTypes.number).isRequired,
+  };
 
-        const data = ['item1', 'item2', 'item3'];
+  render() {
+    const { show, data } = this.props;
 
-        return (
-            <div>
-                {(show) ?
-                    <div className={'Menu__box'}>
-                        {data.map((i, index) => {
-                            return <MenuItem key={index}>{i}</MenuItem>
-                        })}
-                    </div> : ''}
-            </div>
-        );
-    }
+    return (
+      <div>
+        {show && data
+        && (
+          <div className="Menu__box">
+            {data.map((item) => <MenuItem key={item}>{item.value}</MenuItem>)}
+          </div>
+        )}
+      </div>
+    );
+  }
 }
-
-Menu.propTypes = {
-    show: PropTypes.bool.isRequired
-};
-
 
 export default Menu;
