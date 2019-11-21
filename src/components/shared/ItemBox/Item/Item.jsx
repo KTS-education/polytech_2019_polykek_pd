@@ -5,7 +5,7 @@ import './Item.scss';
 
 class Item extends Component {
   static propTypes = {
-    item: PropTypes.objectOf(PropTypes.string, PropTypes.number).isRequired,
+    item: PropTypes.object.isRequired,
   };
 
   render() {

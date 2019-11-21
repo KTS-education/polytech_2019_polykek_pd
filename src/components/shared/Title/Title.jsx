@@ -5,7 +5,7 @@ import './Title.scss';
 
 class Title extends Component {
   static propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.any.isRequired,
   };
 
   render() {

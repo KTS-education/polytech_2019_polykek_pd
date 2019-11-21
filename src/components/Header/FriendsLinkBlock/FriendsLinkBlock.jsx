@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './FriendsLinkBlock.css';
 
-import LinkText from '../../shared/LinkText';
-import Avatar from '../../shared/Avatar';
+import LinkText from 'components/shared/LinkText';
+import Avatar from 'components/shared/Avatar';
 
 class FriendsLinkBlock extends Component {
   static propTypes = {
-    friends: PropTypes.arrayOf(PropTypes.string).isRequired,
+    friends: PropTypes.array.isRequired,
   };
 
   render() {
@@ -18,8 +18,8 @@ class FriendsLinkBlock extends Component {
         <LinkText>Мои друзья</LinkText>
         <ul className="FriendsLinkBlock__avatars">
           {friends.slice(0, 3).map((i) => (
-            <li key={i} className="FriendsLinkBlock__avatar">
-              <Avatar img={i.img} />
+            <li key={i.id} className="FriendsLinkBlock__avatar">
+              <Avatar img={i.photo_100} />
             </li>
           ))}
         </ul>

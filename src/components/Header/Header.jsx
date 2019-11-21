@@ -7,8 +7,8 @@ import './Header.css';
 
 class Index extends Component {
   static propTypes = {
-    profile: PropTypes.objectOf(PropTypes.string).isRequired,
-    friends: PropTypes.arrayOf(PropTypes.string),
+    profile: PropTypes.object.isRequired,
+    friends: PropTypes.array,
     link: PropTypes.string,
   };
 

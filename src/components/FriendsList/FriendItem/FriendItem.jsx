@@ -6,7 +6,7 @@ import Button from 'components/shared/Button/Button';
 
 class FriendItem extends Component {
   static propTypes = {
-    profile: PropTypes.objectOf(PropTypes.string).isRequired,
+    profile: PropTypes.object.isRequired,
   };
 
   render() {

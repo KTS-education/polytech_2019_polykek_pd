@@ -25,6 +25,11 @@
     "lodash"
   ],
   "rules": {
+//    ВРЕМЕННО
+    "react/forbid-prop-types": [
+      "off"
+    ],
+//    ----------------
     "react/prefer-es6-class": [
       "error",
       "always"

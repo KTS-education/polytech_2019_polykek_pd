@@ -6,7 +6,7 @@ import './ProfileLinkBlock.css';
 
 class ProfileLinkBlock extends Component {
   static propTypes = {
-    profile: PropTypes.objectOf(PropTypes.string).isRequired,
+    profile: PropTypes.object.isRequired,
   };
 
   render() {
@@ -17,10 +17,12 @@ class ProfileLinkBlock extends Component {
     return (
       <div onClick={onClick} role="button" tabIndex={0} className="ProfileLinkBlock__box">
         <div className="ProfileLinkBlock__avatar">
-          <Avatar img={profile.img} />
+          <Avatar img={profile.photo_100} />
         </div>
         <div className="ProfileLinkBlock__text">
-          <LinkText>{profile.name}</LinkText>
+          <LinkText>
+            {`${profile.first_name} ${profile.last_name}`}
+          </LinkText>
         </div>
       </div>
     );

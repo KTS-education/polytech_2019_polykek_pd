@@ -1251,6 +1251,11 @@
     lodash.unescape "4.0.1"
     semver "^6.3.0"
 
+"@vkontakte/vk-connect@^1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@vkontakte/vk-connect/-/vk-connect-1.6.9.tgz#fc0d046b6b6ca35891f47bc4bc0a88e6ee3cd313"
+  integrity sha512-Kbl2FjX4XE8/9DIs0mApvQCAnsPjBfplwSSlSquedcn1jHBbzI1OW3Oev1qlY1chE4jhmOOECPJVlUYWAveYtg==
+
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"

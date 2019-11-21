@@ -6,18 +6,36 @@ import MenuItem from './MenuItem';
 class Menu extends Component {
   static propTypes = {
     show: PropTypes.bool.isRequired,
-    data: PropTypes.arrayOf(PropTypes.string, PropTypes.number).isRequired,
+    data: PropTypes.array,
+  };
+
+  static defaultProps = {
+    data: [],
   };
 
   render() {
     const { show, data } = this.props;
 
+    console.log(data);
+
     return (
       <div>
-        {show && data
+        {show && data.length === 0
         && (
           <div className="Menu__box">
-            {data.map((item) => <MenuItem key={item}>{item.value}</MenuItem>)}
+            <MenuItem completion="">Не найдено</MenuItem>
+          </div>
+        )}
+        {show && data.length > 0
+        && (
+          <div className="Menu__box">
+            {data
+              .map((item) => (
+                <MenuItem key={item.completion} completion={item.completion}>
+                  {item.value
+                    .slice(0, item.value.length - item.completion.length)}
+                </MenuItem>
+              ))}
           </div>
         )}
       </div>

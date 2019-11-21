@@ -9,12 +9,12 @@ import ItemBox from 'components/shared/ItemBox';
 
 import './Main.css';
 /* Тестовые данные */
-import profile from 'data/profile';
-import friends from 'data/friends';
 import WishListItems from 'data/WishListItems';
 
+import MainContext from '../MainContext';
 
-class Main extends Component {
+
+export default class Main extends Component {
   state = {
     isAuthorizing: false,
     userID: null,
@@ -33,8 +33,11 @@ class Main extends Component {
       }).catch((e) => console.error(e));
   }
 
+  static contextType = MainContext;
 
   render() {
+    const { profile, friends } = this.context;
+
     return (
       <div>
         <Header profile={profile} friends={friends} />
@@ -77,5 +80,3 @@ class Main extends Component {
     );
   }
 }
-
-export default Main;

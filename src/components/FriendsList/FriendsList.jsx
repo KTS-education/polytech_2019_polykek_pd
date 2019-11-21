@@ -11,7 +11,7 @@ class FriendsList extends Component {
   };
 
   static propTypes = {
-    friends: PropTypes.arrayOf(PropTypes.object).isRequired,
+    friends: PropTypes.isRequired,
   };
 
   loadMore = () => {

@@ -6,7 +6,7 @@ import './ItemBox.scss';
 
 class ItemBox extends Component {
   static propTypes = {
-    items: PropTypes.arrayOf(PropTypes.object),
+    items: PropTypes.array,
   };
 
   static defaultProps = {
