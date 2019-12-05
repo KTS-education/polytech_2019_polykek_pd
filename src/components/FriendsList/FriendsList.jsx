@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 import React, { Component } from 'react';
 import './FriendsList.css';
 import PropTypes from 'prop-types';

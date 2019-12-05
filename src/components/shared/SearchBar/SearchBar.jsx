@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 import React, { Component } from 'react';
 import _ from 'lodash';
 import './SearchBar.css';

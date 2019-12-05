@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 import React from 'react';
 import Avatar from '../components/shared/Avatar';
 import LinkText from '../components/shared/LinkText';

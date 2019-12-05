@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 import avatar from '../img/avatar.jpg';
 
 export default [

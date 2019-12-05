@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 import React from 'react';
 import ItemBox from 'components/shared/ItemBox';
 import Header from 'components/Header/Header';
