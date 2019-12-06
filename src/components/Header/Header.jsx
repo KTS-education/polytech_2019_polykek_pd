@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import LinkText from 'components/shared/LinkText';
@@ -8,7 +9,7 @@ import './Header.css';
 class Index extends Component {
   static propTypes = {
     profile: PropTypes.objectOf(PropTypes.string).isRequired,
-    friends: PropTypes.arrayOf(PropTypes.string),
+    friends: PropTypes.arrayOf(PropTypes.object),
     link: PropTypes.string,
   };
 
@@ -19,7 +20,6 @@ class Index extends Component {
 
   render() {
     const { profile, friends, link } = this.props;
-
     return (
       <div>
         <div className="Header__box">

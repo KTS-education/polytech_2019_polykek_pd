@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import Header from 'components/Header/Header';

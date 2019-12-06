@@ -48,6 +48,7 @@
         "packageDir": "./"
       }
     ],
+
     "promise/no-return-wrap":  ["warn"],
     "react/jsx-curly-spacing": ["error", {"when": "never", "allowMultiline": false}],
     "sonarjs/cognitive-complexity": [

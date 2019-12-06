@@ -1,9 +1,11 @@
 .Header__box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px;
 }
 .Header__link {
-    text-align: center;
+  text-align: center;
 }
+
+/*# sourceMappingURL=Header.css.map */

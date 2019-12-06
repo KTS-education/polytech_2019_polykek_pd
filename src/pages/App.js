@@ -1,3 +1,4 @@
+/*  eslint linebreak-style: ["error", "windows"]  */
 import React from 'react';
 import Avatar from '../components/shared/Avatar';
 import LinkText from '../components/shared/LinkText';
@@ -11,7 +12,7 @@ import Spinner from '../components/shared/Spinner';
 import Header from '../components/Header';
 import Main from './Main';
 import Friends from './Friends';
-import MyGifts from './My';
+// import MyGifts from './My';
 import profile from '../data/profile';
 import friends from '../data/friends';
 import './App.css';
@@ -24,38 +25,37 @@ export class App extends React.Component {
     return (
       <div className="Mainpending">
         <Main />
-        <hr />
-        <Friends />
-        <hr />
-        <Header profile={profile} friends={friends} />
-        <hr />
-        <Title>
-          Wishlist
-          <span role="img" aria-label="qwerty">&#128525;</span>
-        </Title>
-        <hr />
-        <Avatar img={profile.img} />
-        <hr />
-        <LinkText>LinkText</LinkText>
-        <hr />
-        <Title>Title</Title>
-        <hr />
-        <SubTitle>SubTitle</SubTitle>
-        <hr />
-        <ProfileLinkBlock profile={profile} />
-        <hr />
-        <FriendsLinkBlock friends={friends} />
-        <hr />
-        <Button primary>Добавить в избранное</Button>
-        <hr />
-        <Button secondary>Добавить в избранное</Button>
-        <Button secondary>Добавить в избранноеqweqweqweqweqweqwe</Button>
-        <hr />
-        <Spinner />
-        <hr />
-        <SearchBar />
-        <hr />
-        <MyGifts />
+        {/* <Friends /> */}
+        {/* <hr /> */}
+        {/* <Header profile={profile} friends={friends} /> */}
+        {/* <hr /> */}
+        {/* <Title> */}
+        {/*   Wishlist */}
+        {/*   <span role="img" aria-label="qwerty">&#128525;</span> */}
+        {/* </Title> */}
+        {/* <hr /> */}
+        {/* <Avatar img={profile.img} /> */}
+        {/* <hr /> */}
+        {/* <LinkText>LinkText</LinkText> */}
+        {/* <hr /> */}
+        {/* <Title>Title</Title> */}
+        {/* <hr /> */}
+        {/* <SubTitle>SubTitle</SubTitle> */}
+        {/* <hr /> */}
+        {/* <ProfileLinkBlock profile={profile} /> */}
+        {/* <hr /> */}
+        {/* <FriendsLinkBlock friends={friends} /> */}
+        {/* <hr /> */}
+        {/* <Button primary>Добавить в избранное</Button> */}
+        {/* <hr /> */}
+        {/* <Button secondary>Добавить в избранное</Button> */}
+        {/* <Button secondary>Добавить в избранноеqweqweqweqweqweqwe</Button> */}
+        {/* <hr /> */}
+        {/* <Spinner /> */}
+        {/* <hr /> */}
+        {/* <SearchBar /> */}
+        {/* <hr /> */}
+        {/* <MyGifts /> */}
       </div>
     );
   }

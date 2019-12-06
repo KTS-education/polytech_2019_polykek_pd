@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 import Item3 from '../img/item3.jpg';
 import Item2 from '../img/item2.jpg';
 import Item1 from '../img/item1.jpg';

@@ -1,29 +1,25 @@
 .FriendItem__box {
-    display: flex;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.FriendItem__avatar {
-
-}
-
-
 .FriendItem__name {
-    font-size: 25px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
-    white-space: nowrap;
-
+  font-size: 25px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+  white-space: nowrap;
 }
 .FriendItem__name-box {
-    text-align: start;
-    padding-bottom: 15px;
+  text-align: start;
+  padding-bottom: 15px;
 }
 .FriendItem__info {
-    padding-left: 25px;
+  padding-left: 25px;
 }
+
+/*# sourceMappingURL=FriendItem.css.map */

@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React, { Component } from 'react';
 import api from 'api';
 
@@ -11,7 +13,8 @@ import './Main.css';
 /* Тестовые данные */
 import profile from 'data/profile';
 import friends from 'data/friends';
-import WishListItems from 'data/WishListItems';
+// import WishListItems from 'data/WishListItems';
+import { Route } from 'react-router-dom';
 
 
 class Main extends Component {
@@ -57,7 +60,7 @@ class Main extends Component {
             <div className="Main__content">
               <div className="Main__content-subtitle">
                 <SubTitle>
-                  Популярное
+                  Товары
                   <span
                     role="img"
                     aria-label="Grinning Face with Star Eyes"
@@ -65,10 +68,9 @@ class Main extends Component {
                                         &#129321;
                   </span>
                 </SubTitle>
-
               </div>
               <div>
-                <ItemBox items={WishListItems} />
+                <Route path="/itembox/:query" component={ItemBox} />
               </div>
             </div>
           </div>

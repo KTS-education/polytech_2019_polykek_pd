@@ -1,0 +1,25 @@
+.myGifts {
+
+  &__info {
+    display: flex;
+
+    & .info__link-row {
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
+
+    & .right {
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+
+      & a {
+        text-decoration: none;
+        margin-right: 30px;
+      }
+
+    }
+
+  }
+
+}
