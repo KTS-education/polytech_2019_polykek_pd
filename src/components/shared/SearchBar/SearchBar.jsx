@@ -19,7 +19,6 @@ class SearchBar extends Component {
     };
 
     getSuggest = _.debounce((query) => {
-      console.log(query);
       if (query.length < 2) {
         this.setState({ data: [], dropMenu: false });
         return true;

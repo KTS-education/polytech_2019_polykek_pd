@@ -12,7 +12,7 @@ import Spinner from '../components/shared/Spinner';
 import Header from '../components/Header';
 import Main from './Main';
 import Friends from './Friends';
-import MyGifts from './My';
+// import MyGifts from './My';
 import profile from '../data/profile';
 import friends from '../data/friends';
 import './App.css';
@@ -56,7 +56,7 @@ export class App extends React.Component {
         <hr />
         <SearchBar />
         <hr />
-        <MyGifts />
+        {/* <MyGifts /> */}
       </div>
     );
   }

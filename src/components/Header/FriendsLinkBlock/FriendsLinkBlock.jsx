@@ -13,13 +13,17 @@ class FriendsLinkBlock extends Component {
 
   render() {
     const { friends } = this.props;
-
+    if (friends) {
+        for (let i = 0; i < friends.length; i++) {
+            friends[i].id = i;
+        }
+    }
     return (
       <div className="FriendsLinkBlock__box">
         <LinkText>Мои друзья</LinkText>
         <ul className="FriendsLinkBlock__avatars">
           {friends.slice(0, 3).map((i) => (
-            <li key={i} className="FriendsLinkBlock__avatar">
+            <li key={i.id} className="FriendsLinkBlock__avatar">
               <Avatar img={i.img} />
             </li>
           ))}

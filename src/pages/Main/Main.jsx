@@ -13,7 +13,8 @@ import './Main.css';
 /* Тестовые данные */
 import profile from 'data/profile';
 import friends from 'data/friends';
-import WishListItems from 'data/WishListItems';
+// import WishListItems from 'data/WishListItems';
+import { Route } from 'react-router-dom';
 
 
 class Main extends Component {
@@ -70,7 +71,10 @@ class Main extends Component {
 
               </div>
               <div>
-                <ItemBox items={WishListItems} />
+
+                <Route path="/itembox/:query" component={ItemBox} />
+
+                {/* <ItemBox items={WishListItems} /> */}
               </div>
             </div>
           </div>

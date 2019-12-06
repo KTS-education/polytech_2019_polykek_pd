@@ -7,18 +7,22 @@ import MenuItem from './MenuItem';
 class Menu extends Component {
   static propTypes = {
     show: PropTypes.bool.isRequired,
-    data: PropTypes.arrayOf(PropTypes.string, PropTypes.number).isRequired,
+    data: PropTypes.arrayOf(PropTypes.string, PropTypes.number),
   };
 
   render() {
     const { show, data } = this.props;
+
+
+
+
 
     return (
       <div>
         {show && data
         && (
           <div className="Menu__box">
-            {data.map((item) => <MenuItem key={item}>{item.value}</MenuItem>)}
+            {data.map((item) => <MenuItem key={item.value}>{item.value}</MenuItem>)}
           </div>
         )}
       </div>
