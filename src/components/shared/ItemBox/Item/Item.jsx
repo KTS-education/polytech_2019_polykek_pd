@@ -6,12 +6,12 @@ import './Item.scss';
 
 class Item extends Component {
   static propTypes = {
-    item: PropTypes.objectOf(PropTypes.string, PropTypes.number).isRequired,
+    item: PropTypes.object.isRequired,
   };
 
   render() {
     const { item } = this.props;
-    const { photo: { url },  price: { avg }  }  = item;
+    const { photo: { url } = {},  price: { avg }  }  = item;
     const {
         name, description,
     } = item;

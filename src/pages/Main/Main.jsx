@@ -60,7 +60,7 @@ class Main extends Component {
             <div className="Main__content">
               <div className="Main__content-subtitle">
                 <SubTitle>
-                  Популярное
+                  Товары
                   <span
                     role="img"
                     aria-label="Grinning Face with Star Eyes"
@@ -68,13 +68,9 @@ class Main extends Component {
                                         &#129321;
                   </span>
                 </SubTitle>
-
               </div>
               <div>
-
                 <Route path="/itembox/:query" component={ItemBox} />
-
-                {/* <ItemBox items={WishListItems} /> */}
               </div>
             </div>
           </div>

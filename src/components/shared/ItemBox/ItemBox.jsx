@@ -33,10 +33,13 @@ class ItemBox extends Component {
 
 
   componentDidUpdate(prevProps, prevState, snapshot) {
+      if (prevProps === this.props)
+          return true;
       const { match: { params: { query } } } = this.props;
       api(`/api/products/search?query=${query}`, 'GET')
           .then((result) => {
               if (result.response) {
+                  console.log(result.response.response)
                   this.setState({ items: result.response.response.items });
                   return true;
               }

@@ -1,4 +1,4 @@
-/* eslint linebreak-style: ["error", "windows"] */
+/*  eslint linebreak-style: ["error", "windows"]  */
 import React from 'react';
 import Avatar from '../components/shared/Avatar';
 import LinkText from '../components/shared/LinkText';
@@ -26,36 +26,36 @@ export class App extends React.Component {
       <div className="Mainpending">
         <Main />
         <hr />
-        <Friends />
-        <hr />
-        <Header profile={profile} friends={friends} />
-        <hr />
-        <Title>
-          Wishlist
-          <span role="img" aria-label="qwerty">&#128525;</span>
-        </Title>
-        <hr />
-        <Avatar img={profile.img} />
-        <hr />
-        <LinkText>LinkText</LinkText>
-        <hr />
-        <Title>Title</Title>
-        <hr />
-        <SubTitle>SubTitle</SubTitle>
-        <hr />
-        <ProfileLinkBlock profile={profile} />
-        <hr />
-        <FriendsLinkBlock friends={friends} />
-        <hr />
-        <Button primary>Добавить в избранное</Button>
-        <hr />
-        <Button secondary>Добавить в избранное</Button>
-        <Button secondary>Добавить в избранноеqweqweqweqweqweqwe</Button>
-        <hr />
-        <Spinner />
-        <hr />
-        <SearchBar />
-        <hr />
+        {/* <Friends /> */}
+        {/* <hr /> */}
+        {/* <Header profile={profile} friends={friends} /> */}
+        {/* <hr /> */}
+        {/* <Title> */}
+        {/*   Wishlist */}
+        {/*   <span role="img" aria-label="qwerty">&#128525;</span> */}
+        {/* </Title> */}
+        {/* <hr /> */}
+        {/* <Avatar img={profile.img} /> */}
+        {/* <hr /> */}
+        {/* <LinkText>LinkText</LinkText> */}
+        {/* <hr /> */}
+        {/* <Title>Title</Title> */}
+        {/* <hr /> */}
+        {/* <SubTitle>SubTitle</SubTitle> */}
+        {/* <hr /> */}
+        {/* <ProfileLinkBlock profile={profile} /> */}
+        {/* <hr /> */}
+        {/* <FriendsLinkBlock friends={friends} /> */}
+        {/* <hr /> */}
+        {/* <Button primary>Добавить в избранное</Button> */}
+        {/* <hr /> */}
+        {/* <Button secondary>Добавить в избранное</Button> */}
+        {/* <Button secondary>Добавить в избранноеqweqweqweqweqweqwe</Button> */}
+        {/* <hr /> */}
+        {/* <Spinner /> */}
+        {/* <hr /> */}
+        {/* <SearchBar /> */}
+        {/* <hr /> */}
         {/* <MyGifts /> */}
       </div>
     );
