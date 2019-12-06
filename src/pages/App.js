@@ -25,7 +25,6 @@ export class App extends React.Component {
     return (
       <div className="Mainpending">
         <Main />
-        <hr />
         {/* <Friends /> */}
         {/* <hr /> */}
         {/* <Header profile={profile} friends={friends} /> */}

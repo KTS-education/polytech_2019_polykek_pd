@@ -1,0 +1,28 @@
+.Main {
+
+  &__Title {
+    margin-bottom: 25px;
+  }
+
+  &__SearchBar {
+    margin-bottom: 50px;
+
+  }
+
+  &__content-subtitle {
+    margin-bottom: 50px;
+
+  }
+
+  &__TopBox {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  &__content {
+    justify-content: center;
+    align-items: center;
+  }
+
+}

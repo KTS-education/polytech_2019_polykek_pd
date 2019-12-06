@@ -1,18 +1,18 @@
-.ProfileLinkBlock__box:hover {
-    cursor: pointer;
-}
 .ProfileLinkBlock__box {
-    display: flex;
-    align-items: center;
-    height: 40px;
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
-
+.ProfileLinkBlock__box:hover {
+  cursor: pointer;
+}
 .ProfileLinkBlock__avatar {
-    width: 50px;
+  width: 50px;
+}
+.ProfileLinkBlock__text {
+  margin: 10px;
+  left: 50px;
+  top: 15%;
 }
 
-.ProfileLinkBlock__text {
-    margin: 10px;
-    left: 50px;
-    top: 15%;
-}
+/*# sourceMappingURL=ProfileLinkBlock.css.map */

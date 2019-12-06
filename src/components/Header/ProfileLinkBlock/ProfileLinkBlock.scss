@@ -1,0 +1,26 @@
+.ProfileLinkBlock {
+
+
+  &__box {
+    display: flex;
+    align-items: center;
+    height: 40px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__avatar {
+    width: 50px;
+  }
+
+  &__text {
+    margin: 10px;
+    left: 50px;
+    top: 15%;
+  }
+
+}
+
+

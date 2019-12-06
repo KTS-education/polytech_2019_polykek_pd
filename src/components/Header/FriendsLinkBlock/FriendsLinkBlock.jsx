@@ -8,7 +8,7 @@ import Avatar from '../../shared/Avatar';
 
 class FriendsLinkBlock extends Component {
   static propTypes = {
-    friends: PropTypes.arrayOf(PropTypes.string).isRequired,
+    friends: PropTypes.arrayOf(PropTypes.object).isRequired,
   };
 
   render() {

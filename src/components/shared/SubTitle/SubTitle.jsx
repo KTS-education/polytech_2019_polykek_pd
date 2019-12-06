@@ -6,7 +6,7 @@ import './SubTitle.scss';
 
 class SubTitle extends Component {
   static propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.array.isRequired,
   };
 
   render() {

@@ -7,15 +7,11 @@ import MenuItem from './MenuItem';
 class Menu extends Component {
   static propTypes = {
     show: PropTypes.bool.isRequired,
-    data: PropTypes.arrayOf(PropTypes.string, PropTypes.number),
+    data: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string, PropTypes.number)),
   };
 
   render() {
     const { show, data } = this.props;
-
-
-
-
 
     return (
       <div>
