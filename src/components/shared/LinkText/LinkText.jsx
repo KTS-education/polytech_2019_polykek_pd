@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 import './LinkText.scss';
 
 class LinkText extends Component {
     static propTypes = {
-      href: PropTypes.string,
+      to: PropTypes.string,
       children: PropTypes.string.isRequired,
     };
 
     static defaultProps = {
-      href: null,
+      to: '#',
     };
 
     render() {
-      const { href, children } = this.props;
+      const { to, children } = this.props;
       return (
-        <a href={href} className="LinkText__text">{children}</a>
+        <Link to={to} className="LinkText__text">{children}</Link>
       );
     }
 }

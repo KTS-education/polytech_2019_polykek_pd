@@ -3,10 +3,13 @@ import connect from '@vkontakte/vk-connect';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Main from './Main';
+import Spinner from '../components/shared/Spinner';
+import Friends from './Friends';
 
-import './App.css';
-
+import AppConfig from '../config/AppConfig';
 import MainContext from './MainContext';
+
+import './App.scss';
 
 
 export default class App extends React.Component {
@@ -20,7 +23,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     connect.send('VKWebAppInit', {});
-    connect.sendPromise('VKWebAppGetAuthToken', { app_id: 7210429, scope: 'friends' })
+    connect.sendPromise('VKWebAppGetAuthToken', { app_id: AppConfig.app_id, scope: 'friends' })
       .then((response) => {
         this.setState({ token: response });
         console.log('auth', response);
@@ -53,13 +56,20 @@ export default class App extends React.Component {
 
   render() {
     const { isLoading } = this.state;
+
     return (
       <div className="Mainpending">
+        {isLoading && (
+          <div className="loading-spinner">
+            <Spinner />
+          </div>
+        )}
         <MainContext.Provider value={this.state}>
           {!isLoading && (
             <BrowserRouter>
               <Switch>
                 <Route exact path="/" component={Main} />
+                <Route exact path="/friends" component={Friends} />
               </Switch>
             </BrowserRouter>
           )}

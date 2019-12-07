@@ -18,11 +18,10 @@ class ItemBox extends Component {
     return (
       <div className="ItemBox__box">
         <Masonry>
-          { items.map((item) => (
+          {items.map((item) => (
             <Item key={item.id} item={item} />
-          )) }
+          ))}
         </Masonry>
-
       </div>
     );
   }

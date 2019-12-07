@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import LinkText from 'components/shared/LinkText';
 import ProfileLinkBlock from './ProfileLinkBlock';
@@ -9,16 +10,22 @@ class Index extends Component {
   static propTypes = {
     profile: PropTypes.object.isRequired,
     friends: PropTypes.array,
-    link: PropTypes.string,
+    link: PropTypes.objectOf(PropTypes.string),
+    isFriends: PropTypes.bool,
+    isLink: PropTypes.bool,
   };
 
   static defaultProps = {
     friends: [],
-    link: '',
+    link: { text: '', to: '#' },
+    isFriends: false,
+    isLink: false,
   };
 
   render() {
-    const { profile, friends, link } = this.props;
+    const {
+      profile, friends, link, isFriends, isLink,
+    } = this.props;
 
     return (
       <div>
@@ -26,17 +33,16 @@ class Index extends Component {
           <div className="Header__Profile">
             <ProfileLinkBlock profile={profile} />
           </div>
-          {(link)
-            ? (
-              <div className="Header__link">
-                <LinkText>{link}</LinkText>
-              </div>
-            )
-            : (
-              <div className="Header__friends">
-                <FriendsLinkBlock friends={friends} />
-              </div>
-            )}
+          {isLink && (
+            <div className="Header__link">
+              <LinkText to={link.to}>{link.text}</LinkText>
+            </div>
+          )}
+          {isFriends && (
+            <div className="Header__friends">
+              <FriendsLinkBlock friends={friends} />
+            </div>
+          )}
 
         </div>
       </div>
@@ -44,4 +50,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default withRouter(Index);

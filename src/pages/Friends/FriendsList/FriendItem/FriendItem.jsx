@@ -15,11 +15,11 @@ class FriendItem extends Component {
       <div>
         <div className="FriendItem__box">
           <div className="FriendItem__avatar">
-            <Avatar img={profile.img} md />
+            <Avatar img={profile.photo_200_orig} md />
           </div>
           <div className="FriendItem__info">
             <div className="FriendItem__name-box">
-              <span className="FriendItem__name">{profile.name}</span>
+              <span className="FriendItem__name">{`${profile.first_name} ${profile.last_name}`}</span>
             </div>
             <Button>Узнать что подарить</Button>
           </div>

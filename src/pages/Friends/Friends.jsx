@@ -2,26 +2,27 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import Header from 'components/Header/Header';
 import Title from 'components/shared/Title';
-import SearchBar from 'components/shared/SearchBar/SearchBar';
-import FriendsList from 'components/FriendsList';
+import SearchBar from 'pages/Main/SearchBar/SearchBar';
+import FriendsList from 'pages/Friends/FriendsList';
+
+import MainContext from '../MainContext';
 
 import './Friends.css';
 
-import profile from 'data/profile';
-import friends from 'data/friends';
-
 
 class Friends extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
-  static defaultProps = {
-  };
+  static defaultProps = {};
+
+  static contextType = MainContext;
 
   render() {
+    const { profile } = this.context;
+
     return (
       <div>
-        <Header profile={profile} link="Вернуться к поиску" />
+        <Header profile={profile} link={{ text: 'Вернуться к поиску', to: '/' }} isLink />
         <div>
           <div className="Main__TopBox">
             <div className="Main__Title">
@@ -39,7 +40,7 @@ class Friends extends Component {
               <SearchBar />
             </div>
             <div className="Main__content">
-              <FriendsList friends={friends} />
+              <FriendsList />
             </div>
           </div>
         </div>

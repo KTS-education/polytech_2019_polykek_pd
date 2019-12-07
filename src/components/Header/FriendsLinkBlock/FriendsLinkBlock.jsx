@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './FriendsLinkBlock.css';
 
@@ -13,9 +14,20 @@ class FriendsLinkBlock extends Component {
   render() {
     const { friends } = this.props;
 
+    const onButtonClick = () => {
+      // eslint-disable-next-line react/prop-types
+      const { history } = this.props;
+      // eslint-disable-next-line react/prop-types
+      history.push('/friends');
+    };
     return (
-      <div className="FriendsLinkBlock__box">
-        <LinkText>Мои друзья</LinkText>
+      <div
+        className="FriendsLinkBlock__box"
+        onClick={onButtonClick}
+        role="button"
+        tabIndex={0}
+      >
+        <LinkText to="/friends">Мои друзья</LinkText>
         <ul className="FriendsLinkBlock__avatars">
           {friends.slice(0, 3).map((i) => (
             <li key={i.id} className="FriendsLinkBlock__avatar">
@@ -28,4 +40,4 @@ class FriendsLinkBlock extends Component {
   }
 }
 
-export default FriendsLinkBlock;
+export default withRouter(FriendsLinkBlock);

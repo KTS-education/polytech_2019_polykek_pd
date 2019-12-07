@@ -3,11 +3,11 @@ import api from 'api';
 
 import Header from 'components/Header/Header';
 import Title from 'components/shared/Title';
-import SearchBar from 'components/shared/SearchBar/SearchBar';
+import SearchBar from 'pages/Main/SearchBar/SearchBar';
 import SubTitle from 'components/shared/SubTitle';
 import ItemBox from 'components/shared/ItemBox';
 
-import './Main.css';
+import './Main.scss';
 /* Тестовые данные */
 import WishListItems from 'data/WishListItems';
 
@@ -39,8 +39,8 @@ export default class Main extends Component {
     const { profile, friends } = this.context;
 
     return (
-      <div>
-        <Header profile={profile} friends={friends} />
+      <div className="Main__box">
+        <Header profile={profile} friends={friends} isFriends />
         <div>
           <div className="Main__TopBox">
             <div className="Main__Title">

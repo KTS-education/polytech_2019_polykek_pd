@@ -1,13 +1,10 @@
 .FriendItem__box {
     display: flex;
+    text-align: start;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.FriendItem__avatar {
-
-}
-
 
 .FriendItem__name {
     font-size: 25px;
