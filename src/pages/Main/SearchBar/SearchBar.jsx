@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import './SearchBar.css';
+import './SearchBar.scss';
 import api from 'api';
 import Menu from './Menu';
 

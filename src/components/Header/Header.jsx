@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import LinkText from 'components/shared/LinkText';
 import ProfileLinkBlock from './ProfileLinkBlock';
 import FriendsLinkBlock from './FriendsLinkBlock';
-import './Header.css';
+import './Header.scss';
 
 class Index extends Component {
   static propTypes = {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './FriendItem.css';
+import './FriendItem.scss';
 import Avatar from 'components/shared/Avatar';
 import Button from 'components/shared/Button/Button';
 

@@ -7,7 +7,7 @@ import FriendsList from 'pages/Friends/FriendsList';
 
 import MainContext from '../MainContext';
 
-import './Friends.css';
+import './Friends.scss';
 
 
 class Friends extends Component {
@@ -21,7 +21,7 @@ class Friends extends Component {
     const { profile } = this.context;
 
     return (
-      <div>
+      <div className="Friends__box">
         <Header profile={profile} link={{ text: 'Вернуться к поиску', to: '/' }} isLink />
         <div>
           <div className="Main__TopBox">
@@ -36,6 +36,7 @@ class Friends extends Component {
                 </span>
               </Title>
             </div>
+            {/* TODO: сделать поиск по друзьям через апи вк */}
             <div className="Main__SearchBar">
               <SearchBar />
             </div>

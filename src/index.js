@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import connect from '@vkontakte/vk-connect';
+import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import 'api';
+import initStore from './state';
 
 import App from './pages/App';
 
@@ -10,7 +12,10 @@ import './styles/main.scss';
 
 connect.send('VKWebAppInit', {});
 ReactDOM.render(
-  <App />, document.getElementById('root'),
+  <Provider store={initStore}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

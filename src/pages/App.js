@@ -1,10 +1,12 @@
 import React from 'react';
-import connect from '@vkontakte/vk-connect';
+import connectVk from '@vkontakte/vk-connect';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Main from './Main';
 import Spinner from '../components/shared/Spinner';
 import Friends from './Friends';
+import MyGifts from './My';
 
 import AppConfig from '../config/AppConfig';
 import MainContext from './MainContext';
@@ -12,18 +14,16 @@ import MainContext from './MainContext';
 import './App.scss';
 
 
-export default class App extends React.Component {
+export class App extends React.Component {
   state = {
     isLoading: true,
-    profile: {},
-    token: '',
-    qwe: 'ewq',
+    profile: {}, // TODO: удалить и перенести в редакс
+    token: '', // TODO: Туда же
     friends: [],
   };
 
   componentDidMount() {
-    connect.send('VKWebAppInit', {});
-    connect.sendPromise('VKWebAppGetAuthToken', { app_id: AppConfig.app_id, scope: 'friends' })
+    connectVk.sendPromise('VKWebAppGetAuthToken', { app_id: AppConfig.app_id, scope: 'friends' })
       .then((response) => {
         this.setState({ token: response });
         console.log('auth', response);
@@ -35,11 +35,10 @@ export default class App extends React.Component {
 
   init = () => {
     const { token } = this.state;
-    console.log('Mounted');
-    connect.sendPromise('VKWebAppGetUserInfo', {})
+    connectVk.sendPromise('VKWebAppGetUserInfo', {})
       .then((response) => this.setState({ profile: response }))
       .catch((e) => console.error(e));
-    connect.sendPromise('VKWebAppCallAPIMethod',
+    connectVk.sendPromise('VKWebAppCallAPIMethod',
       {
         method: 'friends.get',
         request_id: '32test',
@@ -70,7 +69,9 @@ export default class App extends React.Component {
               <Switch>
                 <Route exact path="/" component={Main} />
                 <Route exact path="/friends" component={Friends} />
+                <Route exact path="/my" component={MyGifts} />
               </Switch>
+              {/* <LinkText to="/my">My list</LinkText> */}
             </BrowserRouter>
           )}
         </MainContext.Provider>
@@ -78,3 +79,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default connect()(App);

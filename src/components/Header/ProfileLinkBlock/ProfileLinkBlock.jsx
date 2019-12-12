@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '../../shared/Avatar';
 import LinkText from '../../shared/LinkText';
-import './ProfileLinkBlock.css';
+import './ProfileLinkBlock.scss';
 
 class ProfileLinkBlock extends Component {
   static propTypes = {
