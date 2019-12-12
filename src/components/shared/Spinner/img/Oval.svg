@@ -1,14 +1,14 @@
 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Oval">
-<mask id="path-1-inside-1" fill="white">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 25C19.4036 25 25 19.4036 25 12.5C25 5.59644 19.4036 0 12.5 0C5.59644 0 0 5.59644 0 12.5C0 19.4036 5.59644 25 12.5 25Z"/>
-</mask>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 25C19.4036 25 25 19.4036 25 12.5C25 5.59644 19.4036 0 12.5 0C5.59644 0 0 5.59644 0 12.5C0 19.4036 5.59644 25 12.5 25Z" stroke="url(#paint0_linear)" stroke-width="8" stroke-linecap="round" stroke-dasharray="20.51" mask="url(#path-1-inside-1)"/>
-</g>
-<defs>
-<linearGradient id="paint0_linear" x1="0" y1="0" x2="0" y2="25" gradientUnits="userSpaceOnUse">
-<stop stop-color="#7DC4FF"/>
-<stop offset="1" stop-color="#6700FF"/>
-</linearGradient>
-</defs>
-</svg>
+  <g id="Oval">
+    <mask id="path-1-inside-1" fill="white">
+      <path fillRule="evenodd" clipRule="evenodd" d="M12.5 25C19.4036 25 25 19.4036 25 12.5C25 5.59644 19.4036 0 12.5 0C5.59644 0 0 5.59644 0 12.5C0 19.4036 5.59644 25 12.5 25Z" />
+    </mask>
+    <path fillRule="evenodd" clipRule="evenodd" d="M12.5 25C19.4036 25 25 19.4036 25 12.5C25 5.59644 19.4036 0 12.5 0C5.59644 0 0 5.59644 0 12.5C0 19.4036 5.59644 25 12.5 25Z" stroke="url(#paint0_linear)" strokeWidth="8" strokeLinecap="round" strokeDasharray="20.51" mask="url(#path-1-inside-1)" />
+  </g>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="0" y2="25" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#7DC4FF" />
+      <stop offset="1" stopColor="#6700FF" />
+    </linearGradient>
+  </defs>
+</svg>;

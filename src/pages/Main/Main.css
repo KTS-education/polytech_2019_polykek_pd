@@ -1,0 +1,23 @@
+.Main__Title {
+  margin-bottom: 25px;
+}
+.Main__SearchBar {
+  margin-bottom: 50px;
+}
+.Main__content-subtitle {
+  margin-bottom: 50px;
+}
+.Main__TopBox {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.Main__content {
+  justify-content: center;
+  align-items: center;
+}
+.Main__box {
+  width: 100%;
+}
+
+/*# sourceMappingURL=Main.css.map */
