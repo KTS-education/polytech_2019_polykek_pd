@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemBox from 'components/shared/ItemBox';
+import ItemBox from 'pages/Main/ItemBox';
 import Header from 'components/Header/Header';
 import Avatar from 'components/shared/Avatar';
 import Title from 'components/shared/Title';

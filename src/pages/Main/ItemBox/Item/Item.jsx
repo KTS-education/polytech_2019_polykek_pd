@@ -11,17 +11,36 @@ class Item extends Component {
   render() {
     const { item } = this.props;
     const {
-      title, img, cost, description,
+      name, photo, price, description,
     } = item;
+
+    if (photo === undefined) {
+      return (
+        <div className="Item__box">
+          <div className="Item__title">
+            <span>{name}</span>
+          </div>
+          <div>
+            <span className="Item__cost">{price.avg}</span>
+          </div>
+          <div>
+            <p className="Item__description">{description}</p>
+          </div>
+          <div className="Item__button">
+            <Button fill>Добавить в избранное</Button>
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div className="Item__box">
-        <img className="Item__img" src={img} alt={title} />
+        <img className="Item__img" src={photo.url} alt={name.url} />
         <div className="Item__title">
-          <span>{title}</span>
+          <span>{name}</span>
         </div>
         <div>
-          <span className="Item__cost">{cost}</span>
+          <span className="Item__cost">{price.avg}</span>
         </div>
         <div>
           <p className="Item__description">{description}</p>

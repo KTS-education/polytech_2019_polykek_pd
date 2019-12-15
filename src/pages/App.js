@@ -14,7 +14,7 @@ import MainContext from './MainContext';
 import './App.scss';
 
 
-export class App extends React.Component {
+class App extends React.Component {
   state = {
     isLoading: true,
     profile: {}, // TODO: удалить и перенести в редакс
@@ -22,7 +22,7 @@ export class App extends React.Component {
     friends: [],
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     connectVk.sendPromise('VKWebAppGetAuthToken', { app_id: AppConfig.app_id, scope: 'friends' })
       .then((response) => {
         this.setState({ token: response });
@@ -31,6 +31,9 @@ export class App extends React.Component {
         return { success: true };
       })
       .catch((error) => console.error('AppGetAuthToken', error));
+
+    // eslint-disable-next-line react/destructuring-assignment,react/prop-types
+    // await this.props.setToken(this.state.token);
   }
 
   init = () => {

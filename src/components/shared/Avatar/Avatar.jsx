@@ -22,6 +22,14 @@ class Avatar extends React.Component {
       } = this.props;
       const boxClass = `Avatar__box${(sm) ? ' Avatar__box_sm' : ''}${(md) ? ' Avatar__box_md' : ''}${(lg) ? ' Avatar__box_lg' : ''}`;
       const imgClass = `Avatar__img${(sm) ? ' Avatar__img_sm' : ''}${(md) ? ' Avatar__img_md' : ''}${(lg) ? ' Avatar__img_lg' : ''}`;
+
+      if (img === undefined) {
+        return (
+          <div className={boxClass}>
+            <img className={imgClass} src="" alt="avatar" />
+          </div>
+        );
+      }
       return (
         <div className={boxClass}>
           <img className={imgClass} src={img} alt="avatar" />

@@ -16,8 +16,6 @@ class Menu extends Component {
   render() {
     const { show, data } = this.props;
 
-    console.log(data);
-
     return (
       <div>
         {show && data.length === 0
