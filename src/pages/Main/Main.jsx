@@ -25,15 +25,7 @@ export default class Main extends Component {
   static propTypes = {};
 
   componentDidMount() {
-    api(`/api/user/auth${window.location.search}`, 'POST')
-      .then((result) => {
-        if (result.response) {
-          this.setState({ userID: result.response.user_id });
-          this.loadItems('apple', 'популярное');
-          return true;
-        }
-        return console.error(result.error);
-      }).catch((e) => console.error(e));
+    this.loadItems('apple', 'популярное');
   }
 
   loadItems = (query, title = 'найдено') => {

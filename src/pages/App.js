@@ -22,7 +22,7 @@ class App extends React.Component {
     friends: [],
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     connectVk.sendPromise('VKWebAppGetAuthToken', { app_id: AppConfig.app_id, scope: 'friends' })
       .then((response) => {
         this.setState({ token: response });
@@ -31,9 +31,6 @@ class App extends React.Component {
         return { success: true };
       })
       .catch((error) => console.error('AppGetAuthToken', error));
-
-    // eslint-disable-next-line react/destructuring-assignment,react/prop-types
-    // await this.props.setToken(this.state.token);
   }
 
   init = () => {
