@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import api from 'api';
+import { connect } from 'react-redux';
 
 import Header from 'components/Header/Header';
 import Title from 'components/shared/Title';
 import SearchBar from 'pages/Main/SearchBar/SearchBar';
 import SubTitle from 'components/shared/SubTitle';
 import ItemBox from 'components/shared/ItemBox';
+import { Route } from 'react-router-dom';
+
 
 import './Main.scss';
-/* Тестовые данные */
-import WishListItems from 'data/WishListItems';
+
 
 import MainContext from '../MainContext';
+import mapStateToProps from '../../state/mapStateToProps';
 
 
-export default class Main extends Component {
+class Main extends Component {
   state = {
     isAuthorizing: false,
     userID: null,
@@ -36,7 +39,9 @@ export default class Main extends Component {
   static contextType = MainContext;
 
   render() {
-    const { profile, friends } = this.context;
+    const {
+      profile, friends,
+    } = this.context;
 
     return (
       <div className="Main__box">
@@ -55,7 +60,7 @@ export default class Main extends Component {
               </Title>
             </div>
             <div className="Main__SearchBar">
-              <SearchBar />
+              <SearchBar context={this.props} />
             </div>
             <div className="Main__content">
               <div className="Main__content-subtitle">
@@ -71,7 +76,7 @@ export default class Main extends Component {
 
               </div>
               <div>
-                <ItemBox items={WishListItems} />
+                <Route path="/itembox/:query" component={ItemBox} />
               </div>
             </div>
           </div>
@@ -80,3 +85,4 @@ export default class Main extends Component {
     );
   }
 }
+export default connect(mapStateToProps)(Main);

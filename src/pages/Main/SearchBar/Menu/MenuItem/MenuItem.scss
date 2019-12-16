@@ -1,26 +1,37 @@
-.MenuItem__text {
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
+.MenuItem {
+
+    &__text {
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+        text-decoration: none;
+    }
+
+    &__completion {
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #aeaeae;
+    }
+
+
+    &__box {
+        text-align: start;
+        padding: 5px 25px;
+        transition: background-color .2s;
+        cursor: pointer;
+        &:hover {
+            background-color: #ededed;
+        }
+    }
+
 }
 
-.MenuItem__completion {
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #aeaeae;
-}
 
-.MenuItem__box {
-    text-align: start;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    transition: all 0.3s;
-}

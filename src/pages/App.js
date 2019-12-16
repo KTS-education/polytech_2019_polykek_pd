@@ -2,7 +2,6 @@ import React from 'react';
 import connectVk from '@vkontakte/vk-connect';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import Main from './Main';
 import Spinner from '../components/shared/Spinner';
 import Friends from './Friends';
@@ -55,7 +54,6 @@ export class App extends React.Component {
 
   render() {
     const { isLoading } = this.state;
-
     return (
       <div className="Mainpending">
         {isLoading && (
@@ -68,6 +66,7 @@ export class App extends React.Component {
             <BrowserRouter>
               <Switch>
                 <Route exact path="/" component={Main} />
+                <Route path="/itembox" component={Main} />
                 <Route exact path="/friends" component={Friends} />
                 <Route exact path="/my" component={MyGifts} />
               </Switch>

@@ -7,6 +7,8 @@ class Menu extends Component {
   static propTypes = {
     show: PropTypes.bool.isRequired,
     data: PropTypes.array,
+    context: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -14,10 +16,7 @@ class Menu extends Component {
   };
 
   render() {
-    const { show, data } = this.props;
-
-    console.log(data);
-
+    const { show, data, context: { dispatch } } = this.props;
     return (
       <div>
         {show && data.length === 0
@@ -31,7 +30,7 @@ class Menu extends Component {
           <div className="Menu__box">
             {data
               .map((item) => (
-                <MenuItem key={item.completion} completion={item.completion}>
+                <MenuItem key={item.completion} completion={item.completion} dispatch={dispatch}>
                   {item.value
                     .slice(0, item.value.length - item.completion.length)}
                 </MenuItem>

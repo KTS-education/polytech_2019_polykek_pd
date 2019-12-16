@@ -6,8 +6,8 @@
   line-height: normal;
   letter-spacing: normal;
   color: #000000;
+  text-decoration: none;
 }
-
 .MenuItem__completion {
   font-size: 14px;
   font-weight: normal;
@@ -17,12 +17,14 @@
   letter-spacing: normal;
   color: #aeaeae;
 }
-
 .MenuItem__box {
   text-align: start;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  transition: all 0.3s;
+  padding: 5px 25px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+.MenuItem__box:hover {
+  background-color: #ededed;
 }
 
 /*# sourceMappingURL=MenuItem.css.map */

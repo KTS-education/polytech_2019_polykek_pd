@@ -10,18 +10,19 @@ class Item extends Component {
 
   render() {
     const { item } = this.props;
+    const { photo: { url } = {}, price: { avg } } = item;
     const {
-      title, img, cost, description,
+      name, description,
     } = item;
 
     return (
       <div className="Item__box">
-        <img className="Item__img" src={img} alt={title} />
+        <img className="Item__img" src={url} alt={name} />
         <div className="Item__title">
-          <span>{title}</span>
+          <span>{name}</span>
         </div>
         <div>
-          <span className="Item__cost">{cost}</span>
+          <span className="Item__cost">{avg}</span>
         </div>
         <div>
           <p className="Item__description">{description}</p>

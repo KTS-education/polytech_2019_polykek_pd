@@ -11,7 +11,6 @@ import App from './pages/App';
 import './styles/main.scss';
 
 const store = initStore();
-
 connect.send('VKWebAppInit', {});
 ReactDOM.render(
   <Provider store={store}>

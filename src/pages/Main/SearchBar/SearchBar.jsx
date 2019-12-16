@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import './SearchBar.scss';
 import api from 'api';
+import PropTypes from 'prop-types';
 import Menu from './Menu';
 
+
 class SearchBar extends Component {
+    static propTypes = {
+      context: PropTypes.object.isRequired,
+    };
+
     state = {
       dropMenu: false,
       data: [],
+      completion: '',
     };
 
     onKeyPressEnter = (e) => {
@@ -47,7 +54,6 @@ class SearchBar extends Component {
       } else {
         this.setState({ dropMenu: false });
       }
-      // console.log('select', e);
     };
 
     onBlurInput = (e) => {
@@ -58,6 +64,7 @@ class SearchBar extends Component {
 
     render() {
       const { data, dropMenu } = this.state;
+      const { context } = this.props;
       return (
         <div onBlur={this.onBlurInput} className="SearchBar__box">
           <input
@@ -66,7 +73,7 @@ class SearchBar extends Component {
             className="SearchBar__input"
             type="string"
           />
-          <Menu data={data.completions} show={dropMenu} />
+          <Menu data={data.completions} show={dropMenu} context={context} />
         </div>
       );
     }
