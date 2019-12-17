@@ -9,13 +9,14 @@ class ItemBox extends Component {
     items: PropTypes.array,
     allBooked: PropTypes.bool,
     compareTo: PropTypes.arrayOf(PropTypes.number),
-    addToWishlistRedux: PropTypes.func.isRequired,
+    addToWishlistRedux: PropTypes.func,
   };
 
   static defaultProps = {
     items: [],
     allBooked: false,
     compareTo: [],
+    addToWishlistRedux: () => {},
   };
 
   render() {

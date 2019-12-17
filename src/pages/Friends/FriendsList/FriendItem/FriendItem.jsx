@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './FriendItem.scss';
 import Avatar from 'components/shared/Avatar';
-import Button from 'components/shared/Button/Button';
+import LinkText from '../../../../components/shared/LinkText';
 
 class FriendItem extends Component {
   static propTypes = {
@@ -11,6 +11,7 @@ class FriendItem extends Component {
 
   render() {
     const { profile } = this.props;
+    const url = `/friendswishlist/${profile.id}`;
     return (
       <div>
         <div className="FriendItem__box">
@@ -21,7 +22,7 @@ class FriendItem extends Component {
             <div className="FriendItem__name-box">
               <span className="FriendItem__name">{`${profile.first_name} ${profile.last_name}`}</span>
             </div>
-            <Button>Узнать что подарить</Button>
+            <LinkText to={url}>Узнать что подарить</LinkText>
           </div>
         </div>
       </div>

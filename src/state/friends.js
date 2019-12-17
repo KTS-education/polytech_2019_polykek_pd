@@ -1,21 +1,21 @@
-const CHANGE_TITLE = 'CHANGE_TITLE';
+const SET_FRIENDS = 'SET_FRIENDS';
 
-export const changeTitle = (title) => ({
-  type: CHANGE_TITLE,
-  payload: { title },
+export const setFriends = (friends) => ({
+  type: SET_FRIENDS,
+  payload: { friends },
 });
 
 const initialStore = {
-  title: 'Этот заголовок хранится в сторе',
+  friends: [],
 };
 
 const reducer = (state = initialStore, action) => {
   // eslint-disable-next-line sonarjs/no-small-switch
   switch (action.type) {
-    case CHANGE_TITLE:
+    case SET_FRIENDS:
       return {
         ...state,
-        title: action.payload.title,
+        friends: action.payload.friends,
       };
     default:
       return state;

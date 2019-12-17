@@ -15,6 +15,7 @@ import MainContext from './MainContext';
 import mapDispatchToProps from '../state/mapDispatchToProps';
 import mapStateToProps from '../state/mapStateToProps';
 import './App.scss';
+import FriendsWishlist from './Friends/FriendsWishlist';
 
 
 class App extends React.Component {
@@ -37,10 +38,10 @@ class App extends React.Component {
 
   init = () => {
     const { token } = this.state;
+    // eslint-disable-next-line react/prop-types
+    const { setProfile, setFriends } = this.props;
     connectVk.sendPromise('VKWebAppGetUserInfo', {})
       .then((response) => {
-        // eslint-disable-next-line react/prop-types
-        const { setProfile } = this.props;
         setProfile(response);
         this.getWishlistIds();
         return true;
@@ -52,13 +53,16 @@ class App extends React.Component {
         request_id: '32test',
         params: {
           order: 'random',
-          count: 3,
+          count: 200,
           fields: 'nickname,domain,sex,bdate,city,country,timezone,photo_100',
           v: '5.103',
           access_token: token.access_token,
         },
-      }).then((response) => this.setState({ friends: response.response.items, isLoading: false }))
-      .catch((error) => console.error(error));
+      }).then((response) => {
+      setFriends(response.response.items);
+      this.setState({ isLoading: false });
+      return true;
+    }).catch((error) => console.error(error));
   };
 
   getWishlistIds = () => {
@@ -97,6 +101,7 @@ class App extends React.Component {
                 <Route exact path="/friends" component={Friends} />
                 <Route exact path="/my" component={MyGifts} />
                 <Route exact path="/mywishlist" component={MyGifts} />
+                <Route exact path="/friendswishlist/:id" component={FriendsWishlist} />
               </Switch>
               {/* <LinkText to="/my">My list</LinkText> */}
             </BrowserRouter>
