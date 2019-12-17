@@ -11,6 +11,9 @@ import MyGifts from './My';
 import AppConfig from '../config/AppConfig';
 import MainContext from './MainContext';
 
+import mapDispatchToProps from '../state/mapDispatchToProps';
+import mapStateToProps from '../state/mapStateToProps';
+
 import './App.scss';
 
 
@@ -26,7 +29,6 @@ class App extends React.Component {
     connectVk.sendPromise('VKWebAppGetAuthToken', { app_id: AppConfig.app_id, scope: 'friends' })
       .then((response) => {
         this.setState({ token: response });
-        console.log('auth', response);
         this.init();
         return { success: true };
       })
@@ -36,7 +38,13 @@ class App extends React.Component {
   init = () => {
     const { token } = this.state;
     connectVk.sendPromise('VKWebAppGetUserInfo', {})
-      .then((response) => this.setState({ profile: response }))
+      .then((response) => {
+        // eslint-disable-next-line react/prop-types
+        const { setProfile } = this.props;
+        this.setState({ profile: response });
+        setProfile(response);
+        return true;
+      })
       .catch((e) => console.error(e));
     connectVk.sendPromise('VKWebAppCallAPIMethod',
       {
@@ -55,7 +63,7 @@ class App extends React.Component {
 
   render() {
     const { isLoading } = this.state;
-
+    const combined = { ...this.state, ...this.props };
     return (
       <div className="Mainpending">
         {isLoading && (
@@ -63,7 +71,7 @@ class App extends React.Component {
             <Spinner />
           </div>
         )}
-        <MainContext.Provider value={this.state}>
+        <MainContext.Provider value={combined}>
           {!isLoading && (
             <BrowserRouter>
               <Switch>
@@ -82,4 +90,4 @@ class App extends React.Component {
 }
 
 
-export default connect()(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

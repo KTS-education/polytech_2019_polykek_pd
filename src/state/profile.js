@@ -1,9 +1,11 @@
 const SET_PROFILE = 'SET_PROFILE';
 const SET_TOKEN = 'SET_TOKEN';
+const SET_USERID = 'SET_USERID';
 
 const initialStore = {
   profile: {},
   token: '',
+  userId: '',
 };
 
 export const setToken = (token) => ({
@@ -16,6 +18,12 @@ export const setProfile = (profile) => ({
   payload: { profile },
 });
 
+export const setUserId = (userId) => ({
+  type: SET_USERID,
+  payload: { userId },
+});
+
+
 export const reducer = (state = initialStore, action) => {
   switch (action.type) {
     case SET_PROFILE:
@@ -27,6 +35,11 @@ export const reducer = (state = initialStore, action) => {
       return {
         ...state,
         token: action.payload.profile,
+      };
+    case SET_USERID:
+      return {
+        ...state,
+        userId: action.payload.userId,
       };
     default:
       return state;

@@ -7,6 +7,11 @@ import './Item.scss';
 class Item extends Component {
   static propTypes = {
     item: PropTypes.object.isRequired,
+    allBooked: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    allBooked: false,
   };
 
   state = {
@@ -14,7 +19,13 @@ class Item extends Component {
   };
 
   componentDidMount() {
-    console.log(123);
+    const { allBooked } = this.props;
+
+    if (allBooked) {
+      this.setState({
+        booked: true,
+      });
+    }
   }
 
   bookItem = () => {
@@ -35,7 +46,6 @@ class Item extends Component {
       photo: item.photo.url,
     }).then((result) => {
       if (result.response) {
-        console.log(result);
         this.setState({ booked: !booked });
       } else {
         console.error(result.error);
@@ -51,8 +61,6 @@ class Item extends Component {
     const {
       name, photo, price, description,
     } = item;
-    console.log(item);
-    console.log(price.avg);
     if (photo === undefined) {
       return (
         <div className="Item__box">

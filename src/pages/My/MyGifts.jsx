@@ -19,8 +19,9 @@ class MyGifts extends React.Component {
   };
 
   componentDidMount() {
+    const { userId } = this.context;
     api('/api/wishlist/get', 'GET', {
-      id: window.user_id,
+      id: userId,
     }).then((result) => {
       if (result.response) {
         this.setState({
@@ -53,7 +54,7 @@ class MyGifts extends React.Component {
           </div>
         </div>
         <div className="myGifts__box">
-          <ItemBox items={items} />
+          <ItemBox items={items} allBooked />
         </div>
 
       </div>

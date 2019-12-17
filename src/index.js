@@ -10,6 +10,7 @@ import App from './pages/App';
 
 import './styles/main.scss';
 import api from './api';
+import { setUserId } from './state/profile';
 
 const store = initStore();
 
@@ -19,6 +20,7 @@ api(`/api/user/auth${window.location.search}`, 'POST')
   .then((result) => {
     if (result.response) {
       window.user_id = result.response.user_id;
+      store.dispatch(setUserId(result.response.user_id));
       ReactDOM.render(
         <Provider store={store}>
           <App />
