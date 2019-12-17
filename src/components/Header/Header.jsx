@@ -26,7 +26,6 @@ class Index extends Component {
     const {
       profile, friends, link, isFriends, isLink,
     } = this.props;
-
     return (
       <div>
         <div className="Header__box">

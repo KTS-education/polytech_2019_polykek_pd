@@ -18,6 +18,7 @@ connect.send('VKWebAppInit', {});
 api(`/api/user/auth${window.location.search}`, 'POST')
   .then((result) => {
     if (result.response) {
+      window.user_id = result.response.user_id;
       ReactDOM.render(
         <Provider store={store}>
           <App />

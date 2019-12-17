@@ -12,15 +12,14 @@ class ProfileLinkBlock extends Component {
   render() {
     const { profile } = this.props;
 
-    const onClick = () => console.log('Click');
 
     return (
-      <div onClick={onClick} role="button" tabIndex={0} className="ProfileLinkBlock__box">
+      <div role="button" tabIndex={0} className="ProfileLinkBlock__box">
         <div className="ProfileLinkBlock__avatar">
           <Avatar img={profile.photo_100} />
         </div>
         <div className="ProfileLinkBlock__text">
-          <LinkText>
+          <LinkText to="/my">
             {`${profile.first_name} ${profile.last_name}`}
           </LinkText>
         </div>

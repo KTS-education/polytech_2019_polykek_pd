@@ -1,17 +1,52 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "styles/constants";
- *   |         ^^^^^^^^^^^^^^^^^^
- *   '
- *   item.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"styles/constants\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^\a   \2575 \a   item.scss 1:9  root stylesheet";
+@charset "UTF-8";
+.Item__description, .Item__cost, .Item__title {
+  text-align: start;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
+
+.Item__box {
+  display: block;
+  width: 30%;
+  padding: 1.5%;
+  align-items: center;
+  text-align: start;
+}
+.Item__img {
+  width: 100%;
+}
+.Item__title {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #000000;
+}
+.Item__cost {
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #000000;
+}
+.Item__cost::after {
+  content: " ₽";
+}
+.Item__description {
+  font-size: 10px;
+  color: #b2b2b2;
+}
+.Item__button {
+  justify-content: center;
+  margin-top: 15px;
+}
+.Item__button-with-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Item__button-with-img .secondary, .Item__button-with-img .primary {
+  width: 80% !important;
+}
+
+/*# sourceMappingURL=Item.css.map */

@@ -70,6 +70,7 @@ class App extends React.Component {
                 <Route exact path="/" component={Main} />
                 <Route exact path="/friends" component={Friends} />
                 <Route exact path="/my" component={MyGifts} />
+                <Route exact path="/mywishlist" component={MyGifts} />
               </Switch>
               {/* <LinkText to="/my">My list</LinkText> */}
             </BrowserRouter>

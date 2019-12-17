@@ -16,6 +16,7 @@ class LinkText extends Component {
 
     render() {
       const { to, children } = this.props;
+      console.log(this.props);
       return (
         <Link to={to} className="LinkText__text">{children}</Link>
       );
