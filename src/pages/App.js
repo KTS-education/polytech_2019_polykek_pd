@@ -3,6 +3,7 @@ import connectVk from '@vkontakte/vk-connect';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import api from 'api';
 import Main from './Main';
 import Spinner from '../components/shared/Spinner';
 import Friends from './Friends';
@@ -13,7 +14,6 @@ import MainContext from './MainContext';
 
 import mapDispatchToProps from '../state/mapDispatchToProps';
 import mapStateToProps from '../state/mapStateToProps';
-
 import './App.scss';
 
 
@@ -41,8 +41,8 @@ class App extends React.Component {
       .then((response) => {
         // eslint-disable-next-line react/prop-types
         const { setProfile } = this.props;
-        this.setState({ profile: response });
         setProfile(response);
+        this.getWishlistIds();
         return true;
       })
       .catch((e) => console.error(e));
@@ -61,8 +61,26 @@ class App extends React.Component {
       .catch((error) => console.error(error));
   };
 
+  getWishlistIds = () => {
+    // eslint-disable-next-line react/prop-types
+    const { userId, setWishlistIds } = this.props;
+    api('/api/wishlist/get', 'GET', {
+      id: userId,
+    }).then((result) => {
+      if (result.response) {
+        const ids = result.response.wishlist.map((e) => e.id);
+        console.log(ids);
+        setWishlistIds(ids);
+      } else {
+        console.error(result);
+      }
+      return null;
+    }).catch((e) => console.error(e));
+  };
+
   render() {
     const { isLoading } = this.state;
+    console.log(this.props);
     const combined = { ...this.state, ...this.props };
     return (
       <div className="Mainpending">

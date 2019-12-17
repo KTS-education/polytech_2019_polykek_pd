@@ -8,20 +8,31 @@ class ItemBox extends Component {
   static propTypes = {
     items: PropTypes.array,
     allBooked: PropTypes.bool,
+    compareTo: PropTypes.arrayOf(PropTypes.number),
+    addToWishlistRedux: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     items: [],
     allBooked: false,
+    compareTo: [],
   };
 
   render() {
-    const { items, allBooked } = this.props;
+    const {
+      items, allBooked, compareTo, addToWishlistRedux,
+    } = this.props;
     return (
       <div className="ItemBox__box">
         <Masonry>
           {items.map((item) => (
-            <Item key={item.id} item={item} allBooked={allBooked} />
+            <Item
+              key={item.id}
+              item={item}
+              allBooked={allBooked}
+              compareTo={compareTo}
+              addToWishlistRedux={addToWishlistRedux}
+            />
           ))}
         </Masonry>
       </div>

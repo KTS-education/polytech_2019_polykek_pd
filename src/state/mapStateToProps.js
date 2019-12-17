@@ -3,7 +3,7 @@ const mapStateToProps = (state) => {
   return {
     profile: state.profile.profile,
     userId: state.profile.userId,
-    wishlistIds: state.wishlishIds.wishlishIds,
+    wishlistIds: state.wishlistIds.wishlistIds,
   };
 };
 

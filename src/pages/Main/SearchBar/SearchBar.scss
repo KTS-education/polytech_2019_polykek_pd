@@ -1,21 +1,41 @@
-.SearchBar__input {
-    width: 500px;
-    height: 50px;
-    border-radius: 25px;
-    border: solid 1px #dddddd;
-    background-color: #ffffff;
-    padding-left: 25px;
-    padding-right: 25px;
+.SearchBar {
+    &__input {
+        width: 500px;
+        height: 50px;
+        border-radius: 25px;
+        border: solid 1px #dddddd;
+        background-color: #ffffff;
+        padding-left: 25px;
+        padding-right: 25px;
 
-    font-size: 16px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+        transition: border-color .2s;
+
+        &::-webkit-input-placeholder {
+            color: #8e8e8e;
+            transition: .6s;
+        }
+
+
+        &:focus {
+            outline: 0;
+            border-color: #231c40;
+            &::-webkit-input-placeholder {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+        }
+    }
+
+    &__box {
+        display: inline-block;
+    }
 }
 
-.SearchBar__box {
-    display: inline-block;
-}
+

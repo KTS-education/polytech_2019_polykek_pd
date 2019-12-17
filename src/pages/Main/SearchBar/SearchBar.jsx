@@ -19,12 +19,10 @@ class SearchBar extends Component {
   onKeyPressEnter = (e) => {
     if (e.charCode === 13) {
       this.setState({ dropMenu: true });
-      console.log('press', e);
     }
   };
 
   getSuggest = _.debounce((query) => {
-    console.log(query);
     if (query.length < 2) {
       this.setState({ data: [], dropMenu: false });
       return true;
@@ -60,29 +58,27 @@ class SearchBar extends Component {
     this.setState({ inputValue: event.target.value });
   };
 
-  onBlurInput = (e) => {
-    this.setState({ dropMenu: false });
+  onSelect = (children, completion) => {
+    this.setState({ inputValue: `${children}${completion}`, dropMenu: false });
     const { onSelect } = this.props;
-    const { inputValue } = this.state;
-
-    onSelect(inputValue);
-    // console.log('Blur');
-
-    return e;
+    const combined = `${children} ${completion}`;
+    onSelect(combined);
   };
 
   render() {
-    const { data, dropMenu } = this.state;
+    const { data, dropMenu, inputValue } = this.state;
     return (
-      <div onBlur={this.onBlurInput} className="SearchBar__box">
+      <div className="SearchBar__box">
         <input
           onChange={this.onChangeValue}
           onSelect={this.onSelectInput}
           onKeyPress={this.onKeyPressEnter}
           className="SearchBar__input"
           type="string"
+          placeholder="Я хочу..."
+          value={inputValue}
         />
-        <Menu data={data.completions} show={dropMenu} />
+        <Menu data={data.completions} show={dropMenu} onSelect={this.onSelect} />
       </div>
     );
   }

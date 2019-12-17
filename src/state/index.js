@@ -1,10 +1,10 @@
 import { combineReducers, createStore } from 'redux';
 import profile from './profile';
-import wishlishIds from './wishlistItems';
+import wishlistIds from './wishlistItems';
 
 
 const initStore = () => {
-  const reducers = combineReducers({ profile, wishlishIds });
+  const reducers = combineReducers({ profile, wishlistIds });
 
   return createStore(reducers);
 };

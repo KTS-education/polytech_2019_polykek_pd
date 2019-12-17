@@ -8,10 +8,13 @@ class Item extends Component {
   static propTypes = {
     item: PropTypes.object.isRequired,
     allBooked: PropTypes.bool,
+    compareTo: PropTypes.arrayOf(PropTypes.number),
+    addToWishlistRedux: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     allBooked: false,
+    compareTo: [],
   };
 
   state = {
@@ -19,9 +22,8 @@ class Item extends Component {
   };
 
   componentDidMount() {
-    const { allBooked } = this.props;
-
-    if (allBooked) {
+    const { allBooked, compareTo, item } = this.props;
+    if (allBooked || compareTo.includes(item.id)) {
       this.setState({
         booked: true,
       });
@@ -29,7 +31,7 @@ class Item extends Component {
   }
 
   bookItem = () => {
-    const { item } = this.props;
+    const { item, addToWishlistRedux } = this.props;
     const { booked } = this.state;
     let url;
 
@@ -47,6 +49,7 @@ class Item extends Component {
     }).then((result) => {
       if (result.response) {
         this.setState({ booked: !booked });
+        addToWishlistRedux(item.id);
       } else {
         console.error(result.error);
       }

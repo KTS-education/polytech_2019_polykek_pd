@@ -24,13 +24,15 @@ export default class Main extends Component {
 
   static propTypes = {};
 
+  // eslint-disable-next-line react/sort-comp
+  static contextType = MainContext;
+
   componentDidMount() {
     this.loadItems('apple', 'популярное');
   }
 
   loadItems = (query, title = 'найдено') => {
     this.setState({ itemsIsLoading: true });
-    console.log(query);
     if (query.length < 2) {
       this.setState({ data: [], dropMenu: false });
       return true;
@@ -63,12 +65,14 @@ export default class Main extends Component {
     return null;
   };
 
-  static contextType = MainContext;
+  addToWishlistRedux = (id) => {
+    const { setWishlistIds, wishlistIds } = this.context;
+    setWishlistIds([...wishlistIds, id]);
+  };
 
   render() {
-    const { profile, friends } = this.context;
+    const { profile, friends, wishlistIds } = this.context;
     const { items, title, itemsIsLoading } = this.state;
-
     return (
       <div className="Main__box">
         <Header profile={profile} friends={friends} isFriends />
@@ -118,7 +122,13 @@ export default class Main extends Component {
               </div>
               <div>
                 {itemsIsLoading && <Spinner />}
-                {!itemsIsLoading && <ItemBox items={items} />}
+                {!itemsIsLoading && (
+                <ItemBox
+                  items={items}
+                  compareTo={wishlistIds}
+                  addToWishlistRedux={this.addToWishlistRedux}
+                />
+                )}
               </div>
             </div>
           </div>

@@ -13,8 +13,20 @@
   line-height: normal;
   letter-spacing: normal;
   color: #000000;
+  transition: border-color 0.2s;
 }
-
+.SearchBar__input::-webkit-input-placeholder {
+  color: #8e8e8e;
+  transition: 0.6s;
+}
+.SearchBar__input:focus {
+  outline: 0;
+  border-color: #231c40;
+}
+.SearchBar__input:focus::-webkit-input-placeholder {
+  transform: translateX(100px);
+  opacity: 0;
+}
 .SearchBar__box {
   display: inline-block;
 }
